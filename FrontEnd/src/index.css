@@ -1,0 +1,427 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* sidebar css */
+body,h2{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.sidenavbar{
+    width: 17vw;
+    min-width: 10vw;
+    background-color: #cde1eae9;
+    height: 100vh ;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+.stdicondiv{
+   width: 100%;
+   margin-top: 2em;
+   /* border: 1px solid red; */
+   display: flex;
+   justify-content: center;
+}
+
+.stdlogo{
+    height: 120px;
+    width: 150px;
+ 
+}
+
+.sidebaropt{
+    display: flex;
+    flex-direction: column;
+    color: grey;
+    margin-top:30px ;
+    /* border: 1px solid red; */
+  
+}
+
+.sidebarlinks{
+    text-decoration: none;
+    color: rgb(92, 94, 87);
+    font-size: 1.1rem;
+    padding: 8px;
+    margin: 5px;
+    transition: 0.4s;
+}
+
+.sidebaricons{
+    margin-right: 10px;
+}
+
+.sidebarlinks:hover{
+    background-color:#FF8066;
+    color: white;
+    border-radius: 10px;
+}
+
+
+/* form filling page styles */
+
+.formfillingdiv{
+    display: flex;
+}
+
+/* main ui */
+.mainui{
+    width: 85vw;
+}
+
+
+/* form page head */
+
+.formpagehead{
+    width: 100%;
+    color: rgba(0, 0, 0, 0.779);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.h1div{
+    margin: auto;
+}
+.formpagehead h1{
+   margin: 0px;
+   font-size: 2.5em;
+}
+
+.formpagehead span{
+    color: #ef6348;
+}
+
+.logoutbtn{
+    padding: 10px 25px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin: 10px 30px;
+    font-size: 1em;
+    background-color: #3A88A2;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+/* pos styles */
+
+.posdiv{
+    margin: auto;
+    width: 80%;
+    /* background-color: rgb(220, 220, 240); */
+    min-width: 40%;
+    padding: 1.5em;
+    font-family:cursive ;
+    color: rgba(58, 58, 58, 0.847);
+}
+
+
+.posdiv h2{
+    color: rgba(37, 36, 36, 0.779);
+}
+
+.listdiv{
+   width: 100%;  
+}
+
+.listdiv ol{
+    list-style-type: lower-roman;
+}
+
+.listdiv ol li{
+    margin: 10px;
+    padding: 5px;
+    text-align: justify;
+}
+
+.listdiv ol li span{
+    font-weight: bolder;
+    font-size: 1.1em;
+}
+
+/* pes form styles */
+.pesform{
+    padding:10px 45px ;
+    /* border: 1px solid red; */
+}
+
+.pesform h2{
+    font-size: 2em;
+    color: rgba(37, 36, 36, 0.895);
+}
+
+.pesform table{
+    width: 100%;
+    border-collapse: collapse;
+    color: rgba(58, 58, 58, 0.9);
+}
+
+.pesform table td {
+    border: 1px solid black; /* Example border style: 1px solid black */
+    padding: 10px 15px; /* Optional: Add padding for better visual appearance */
+    font-size: 14px;
+    text-align: justify;
+    align-items: center;
+}
+.pesform table th{
+    border: 1px solid black; /* Example border style: 1px solid black */
+    padding: 10px 15px; /* Optional: Add padding for better visual appearance */
+}
+
+.radio-container{
+   display: flex;
+   justify-content: center;
+   height:100%;
+}
+
+.FormBtndiv{
+   position: relative;
+   top: 30px;
+   margin-bottom: 20px;
+}
+
+.FormBtn{
+    padding: 10px 60px;
+    background-color: #ef6348;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1em;
+    cursor: pointer;
+    position: relative;
+    left: 70%;
+    margin-bottom: 30px;
+}
+.PESnote{
+    padding:10px 15px;
+    margin: 0;
+    color: rgb(238, 93, 93);
+    font-size: 13px;
+    text-align: justify;
+    line-height: 20px;
+}
+
+/* CoCurricular survey Form styles */
+
+.CoCurricular-maindiv{
+   /* border: 1px solid red; */
+   padding: 10px 45px;
+   margin: 0px;
+}
+
+.CoCurricular-table{
+    width: 100%;
+    border-collapse: collapse;
+    color: rgba(58, 58, 58, 0.9);
+}
+
+.CoCurricular-table td{
+   border: 1px  solid black;
+   padding: 10px 15px; /* Optional: Add padding for better visual appearance */
+   font-size: 14px;
+   text-align: justify;
+   align-items: center;
+}
+
+.CoCurricular-table th{
+    border: 1px  solid black;
+    padding: 10px 15px;
+}
+
+.CoCurricular-maindiv h2{
+    font-size: 2em;
+    color: rgba(37, 36, 36, 0.895);
+}
+
+.cocurricularnote{
+    padding:10px 15px;
+    color: rgb(238, 93, 93);
+    font-size: 14px;
+    text-align: justify;
+    line-height: 20px;
+}
+
+/* Extra curricular Survey Form */
+.ExtraCurricular-maindiv{
+    /* border: 1px solid red; */
+    padding: 10px 45px;
+    margin: 0px;
+ }
+ 
+ .ExtraCurricular-table{
+     width: 100%;
+     border-collapse: collapse;
+     color: rgba(58, 58, 58, 0.9);
+ }
+ 
+ .ExtraCurricular-table td{
+    border: 1px  solid black;
+    padding: 10px 15px; /* Optional: Add padding for better visual appearance */
+    font-size: 14px;
+    text-align: justify;
+    align-items: center;
+ }
+ 
+ .ExtraCurricular-table th{
+     border: 1px  solid black;
+     padding: 10px 15px;
+ }
+ 
+ .ExtraCurricular-maindiv h2{
+     font-size: 2em;
+     color: rgba(37, 36, 36, 0.895);
+ }
+ 
+ .ExtraCurricularnote{
+     padding:10px 15px;
+     color: rgb(238, 93, 93);
+     font-size: 14px;
+     text-align: justify;
+     line-height: 20px;
+ }
+
+ /* Employer Survey */
+ .EmployerSurvey-maindiv{
+    /* border: 1px solid red; */
+    padding: 10px 45px;
+    margin: 0px;
+ }
+ 
+ .EmployerSurvey-table{
+     width: 100%;
+     border-collapse: collapse;
+     color: rgba(58, 58, 58, 0.9);
+ }
+ 
+ .EmployerSurvey-table td{
+    border: 1px  solid black;
+    padding: 10px 15px; /* Optional: Add padding for better visual appearance */
+    font-size: 13px;
+    text-align: left;
+    align-items: center;
+ }
+ 
+ .EmployerSurvey-table th{
+     border: 1px  solid black;
+     padding: 10px 15px;
+ }
+ 
+ .EmployerSurvey-maindiv h2{
+     font-size: 2em;
+     color: rgba(37, 36, 36, 0.895);
+ }
+ 
+ .EmployerSurveynote{
+     padding:10px 15px;
+     color: rgb(238, 93, 93);
+     font-size: 14px;
+     text-align: justify;
+     line-height: 20px;
+ }
+
+ /* Parent Survey styles */
+
+ .ParentSurvey-maindiv{
+    /* border: 1px solid red; */
+    padding: 10px 45px;
+    margin: 0px;
+ }
+ 
+ .ParentSurvey-table{
+     width: 100%;
+     border-collapse: collapse;
+     color: rgba(58, 58, 58, 0.9);
+ }
+ 
+ .ParentSurvey-table td{
+    border: 1px  solid black;
+    padding: 10px 15px; /* Optional: Add padding for better visual appearance */
+    font-size: 13px;
+    text-align: left;
+    align-items: center;
+ }
+ 
+ .ParentSurvey-table th{
+     border: 1px  solid black;
+     padding: 10px 15px;
+ }
+ 
+ .ParentSurvey-maindiv h2{
+     font-size: 2em;
+     color: rgba(37, 36, 36, 0.895);
+ }
+ 
+ .ParentSurveynote{
+     padding:10px 15px;
+     color: rgb(238, 93, 93);
+     font-size: 14px;
+     text-align: justify;
+     line-height: 20px;
+ }
+
+.feedback-div{
+   padding: 0px;
+}
+
+ .feedback-box{
+    height: 100%;
+    width: 100%;
+ }
+
+ /* AlumniSurvey  Styles */
+
+ .AlumniSurvey-maindiv{
+    border: 1px solid red;
+    padding: 10px 45px;
+    max-width: 85vw;
+ }
+ 
+ .AlumniSurvey-table{
+     width: 100%;
+     border-collapse: collapse;
+     color: rgba(58, 58, 58, 0.9);
+ }
+ 
+ .AlumniSurvey-table td{
+    border: 1px  solid black;
+    padding: 10px 15px; /* Optional: Add padding for better visual appearance */
+    font-size: 13px;
+    text-align: left;
+    align-items: center;
+ }
+ 
+ .AlumniSurvey-table th{
+     border: 1px  solid black;
+     padding: 10px 15px;
+ }
+ 
+ .AlumniSurvey-maindiv h2{
+     font-size: 2em;
+     color: rgba(37, 36, 36, 0.895);
+ }
+ 
+ .AlumniSurveynote{
+     padding:10px 15px;
+     color: rgb(238, 93, 93);
+     font-size: 14px;
+     text-align: justify;
+     line-height: 20px;
+ }
+
+ /* Styles for parent header  */
+
+ .parentheadimg-div{
+    /* border: 1px solid red; */
+    padding: 20px;
+    display: flex;
+     justify-content: center;
+ }
+
+ .bitlogo{
+    height: 100px;
+    width: 80%;
+  
+ }
