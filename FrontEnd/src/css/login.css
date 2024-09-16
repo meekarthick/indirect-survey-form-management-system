@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+body,h2{
+    margin: 0;
+    padding: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+.Loginmain-div{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid rgb(0, 0, 255); */
+}
+
+.Form-Div{
+    width: 30%;
+    box-shadow: 0 0 5px 2px #b5b2b2; 
+    border-radius:10px;
+    padding: 10px 55px;
+ }
+
+ .login-main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 20px;
+    margin-bottom: 15px;
+}
+
+ 
+ .login-head{
+     font-size: 1.5em;
+     text-align: center;
+     margin:0px 20px 0px 0px;
+     font-weight: 500;
+     color: #615EFC;
+ }
+ 
+
+ .Name{
+     margin-bottom:5px;
+     font-size: 1em;
+ }
+ .Name span{
+     color: rgba(0, 0, 0, 0.808);
+ }
+ 
+ .input-feild{
+     width: 100%;
+     outline: none;
+     padding: 10px 10px;
+     display: inline-block;
+     border: 1px solid #9a9999;
+     border-radius: 4px;
+     box-sizing: border-box;
+ }
+ 
+ .sigup-logo{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin: 0px 0px;
+ }
+ 
+ .sigup-logo img{
+     height: 100px;
+     width: 100px;
+ }
+ 
+ .Sigup-submit{
+     /* border: 1px solid red; */
+     margin-bottom: 20px;
+     
+ }
+ 
+ .Sigup-submit button{
+    margin-top: 25px;
+     padding: 15px 50px;
+     width: 100%;
+     border-radius: 10px;
+     outline: none;
+     color: white;
+     background-color: #566cf6;
+     border: none;
+     font-size: 1.1em;
+ }
+ 
+ .input-feild:focus{
+       border: 1.5px solid rgba(0, 0, 0, 0.756);
+ }
+ 
+ .contact-div{
+     display: flex;
+     flex-direction: column;
+ }
+ 
+ .password-container {
+     position: relative;
+ }
+ 
+ .toggle-password {
+     position: absolute;
+     right: 10px;
+     top: 50%;
+     transform: translateY(-50%);
+     border: none;
+     background: transparent;
+     cursor: pointer;
+     color: #333; /* Adjust color as needed */
+ }
+ 
+ .toggle-password:focus {
+     outline: none;
+ }
+
+ /* drop down box styles */
+
+ .dropdown-field{
+    width: 100%;
+    outline: none;
+    padding: 10px 10px;
+    display: inline-block;
+    border: 1px solid #9a9999;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #333333b6;
+ }
+
+ .dropdown-field option{
+    color: #333333b6;
+ }
+
+
+
+ /* student log in styles */
+
+ .googlebtn_div{
+    margin-top: 25px;
+    margin-bottom: 25px;
+ }
+
+ .google_btn{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    border: 1px solid  rgba(0, 0, 0, 0.778);
+    color: rgba(0, 0, 0, 0.778);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.1em;
+ }
+
+
+ .google_btn:hover{
+    cursor: pointer;
+ }
+ .google_btn img{
+    height: 40px;
+    width: 40px;
+ }
+
+
+.std-form{
+    width: 20%;
+    box-shadow: 0 0 5px 2px #b5b2b2; 
+    border-radius:10px;
+    padding: 10px 55px;
+}
+
+.login-logo{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
+}
+
+.heading{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.heading h3{
+    color: #333333e8;
+    font-size: 1.5em;
+}
+
+.login-logo img{
+    height: 120px;
+    width: 120px;
+}
+
+#signup-route-div{
+    display: flex;
+    justify-content: center;
+}
+
+.signup-route{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.778);
+}
+.login-des{
+    display: flex;
+    justify-content: center;
+}
+.login-des p{
+    font-size: 13px;
+    color: #333333dd;
+}
+
+.login-des span{
+    color: red
+}

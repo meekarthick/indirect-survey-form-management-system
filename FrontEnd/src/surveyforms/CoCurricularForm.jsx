@@ -25,7 +25,7 @@ const CoCurricularForm = ({ department }) => {
     return (
         <div className='CoCurricular-maindiv'>
             <div className='CoCurricular-head'>
-                <h2>CoCurricular Survey</h2>
+                <h2>Co-Curricular Survey</h2>
                 <div className='cocurricularnote'>{`As a Student of ${department} check the ability of yourself to the following statements and rate the performance on a 5-point scale with 5 - Excellent, 4- Very Good, 3 - Good,  2 - Average and 1- Poor`}</div>
             </div>
             <form>

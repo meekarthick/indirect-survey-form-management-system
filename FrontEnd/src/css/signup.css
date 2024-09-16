@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+.SignUpmain-div{
+ 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.Form-Div{
+   width: 30%;
+   box-shadow: 0 0 5px 2px #b5b2b2; 
+   border-radius:15px;
+   padding: 10px 55px;
+   /* margin: 10px 0px; */
+}
+
+.Signup-head{
+    font-size: 1.5em;
+    text-align: center;
+    margin:0px 20px 0px 0px;
+    font-weight: 600;
+    color: #615EFC;
+}
+
+.main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 20px;
+    margin-bottom: 15px;
+}
+
+.Name{
+    margin-bottom:5px;
+    font-size: 1em;
+}
+.Name span{
+    color: rgba(0, 0, 0, 0.808);
+}
+
+.input-feild{
+    width: 100%;
+    outline: none;
+    padding: 10px 10px;
+    display: block;
+    border: 1px solid #9a9999;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.sigup-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 0px;
+}
+
+.sigup-logo img{
+    height: 120px;
+    width: 120px;
+}
+
+.Sigup-submit{
+    margin-bottom: 20px;    
+}
+
+.Sigup-submit button{
+    padding: 15px 50px;
+    width: 100%;
+    border-radius: 10px;
+    outline: none;
+    color: white;
+    background-color: #566cf6;
+    border: none;
+    font-size: 1.1em;
+}
+
+.input-feild:focus{
+      border: 1.5px solid rgba(0, 0, 0, 0.756);
+}
+
+.password-container {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #333; /* Adjust color as needed */
+}
+
+.toggle-password:focus {
+    outline: none;
+}

@@ -4,10 +4,10 @@ import Header from '../components/Header'
 const AlumniUI = () => {
   return (
     <div>
-        <Header />
-        <AlumniSurvey
+      <Header />
+      <AlumniSurvey
         department={'AIML'}
-        />
+      />
     </div>
   )
 }

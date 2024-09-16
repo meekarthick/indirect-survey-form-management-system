@@ -66,9 +66,9 @@ body,h2{
 }
 
 /* main ui */
-.mainui{
-    width: 85vw;
-}
+/* .mainui{
+    width: 100vw;
+} */
 
 
 /* form page head */
@@ -109,7 +109,7 @@ body,h2{
 
 .posdiv{
     margin: auto;
-    width: 80%;
+    width: 70%;
     /* background-color: rgb(220, 220, 240); */
     min-width: 40%;
     padding: 1.5em;
@@ -143,7 +143,10 @@ body,h2{
 
 /* pes form styles */
 .pesform{
-    padding:10px 45px ;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+    padding: 10px 95px;
     /* border: 1px solid red; */
 }
 
@@ -153,7 +156,7 @@ body,h2{
 }
 
 .pesform table{
-    width: 100%;
+    /* width: 80%; */
     border-collapse: collapse;
     color: rgba(58, 58, 58, 0.9);
 }
@@ -173,7 +176,7 @@ body,h2{
 .radio-container{
    display: flex;
    justify-content: center;
-   height:100%;
+   /* height:100%; */
 }
 
 .FormBtndiv{
@@ -208,12 +211,11 @@ body,h2{
 
 .CoCurricular-maindiv{
    /* border: 1px solid red; */
-   padding: 10px 45px;
+   padding: 10px 95px;
    margin: 0px;
 }
 
 .CoCurricular-table{
-    width: 100%;
     border-collapse: collapse;
     color: rgba(58, 58, 58, 0.9);
 }
@@ -247,12 +249,11 @@ body,h2{
 /* Extra curricular Survey Form */
 .ExtraCurricular-maindiv{
     /* border: 1px solid red; */
-    padding: 10px 45px;
+    padding: 10px 95px;
     margin: 0px;
  }
  
  .ExtraCurricular-table{
-     width: 100%;
      border-collapse: collapse;
      color: rgba(58, 58, 58, 0.9);
  }
@@ -286,12 +287,11 @@ body,h2{
  /* Employer Survey */
  .EmployerSurvey-maindiv{
     /* border: 1px solid red; */
-    padding: 10px 45px;
+    padding: 10px 95px;
     margin: 0px;
  }
  
  .EmployerSurvey-table{
-     width: 100%;
      border-collapse: collapse;
      color: rgba(58, 58, 58, 0.9);
  }
@@ -316,7 +316,7 @@ body,h2{
  
  .EmployerSurveynote{
      padding:10px 15px;
-     color: rgb(238, 93, 93);
+     color: rgb(244, 49, 49);
      font-size: 14px;
      text-align: justify;
      line-height: 20px;
@@ -324,14 +324,48 @@ body,h2{
 
  /* Parent Survey styles */
 
+ /* Styles for parent header  */
+
+ .parentheadimg-div{
+    /* border: 1px solid red; */
+    padding: 20px;
+    display: flex;
+     justify-content: center;
+ }
+
+ .bitlogo{
+    height: 100px;
+    width: 80%;
+ }
+
+ .ParentSurvey-head{
+    /* border: 1px solid red; */
+    display: flex;
+   
+ }
+ 
+ .ParentFormBtn{
+     padding: 10px 60px;
+     background-color: #ef6348;
+     border: none;
+     border-radius: 15px;
+     color: white;
+     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+     font-size: 1em;
+     cursor: pointer;
+     position: relative;
+     left: 70%;
+     margin-bottom: 30px;
+     margin-top: 20px;
+ }
+ 
  .ParentSurvey-maindiv{
     /* border: 1px solid red; */
-    padding: 10px 45px;
+    padding: 10px 95px;
     margin: 0px;
  }
  
  .ParentSurvey-table{
-     width: 100%;
      border-collapse: collapse;
      color: rgba(58, 58, 58, 0.9);
  }
@@ -356,31 +390,49 @@ body,h2{
  
  .ParentSurveynote{
      padding:10px 15px;
-     color: rgb(238, 93, 93);
+     color: rgb(239, 42, 42);
      font-size: 14px;
      text-align: justify;
      line-height: 20px;
  }
+/* .feedbackBox-main{
+    border: 1px solid red;
+    
+} */
 
-.feedback-div{
-   padding: 0px;
+.feedbackBox-main textarea{
+    min-height: 150px;
+    position: relative;
+    outline: none;
+    border: 1.5px solid  rgba(56, 56, 56, 0.895);
+    min-width: 700px;
+    border-radius: 10px;
+    padding:15px 20px 15px 20px;
+    color: rgba(37, 36, 36, 0.895);
 }
-
- .feedback-box{
-    height: 100%;
-    width: 100%;
- }
+.FeedbackFormBtn{
+    padding: 10px 30px;
+    background-color:#36BA98;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1em;
+    cursor: pointer;
+    position: relative;
+    left: 70%;
+    margin-bottom: 30px;
+}
 
  /* AlumniSurvey  Styles */
 
  .AlumniSurvey-maindiv{
     border: 1px solid red;
-    padding: 10px 45px;
+    padding: 10px 95px;
     max-width: 85vw;
  }
  
  .AlumniSurvey-table{
-     width: 100%;
      border-collapse: collapse;
      color: rgba(58, 58, 58, 0.9);
  }
@@ -411,17 +463,3 @@ body,h2{
      line-height: 20px;
  }
 
- /* Styles for parent header  */
-
- .parentheadimg-div{
-    /* border: 1px solid red; */
-    padding: 20px;
-    display: flex;
-     justify-content: center;
- }
-
- .bitlogo{
-    height: 100px;
-    width: 80%;
-  
- }

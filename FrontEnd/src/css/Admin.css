@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+body,
+h2,
+h1,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+    font-family: 'https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap';
+    box-sizing: border-box;
+}
+
+
+/* over all admin style */
+.admincontainer {
+    display: flex;
+    width: 100%;
+}
+
+.adminmaincontent {
+    flex-grow: 1;
+    /* padding: 20px; */
+    margin-left: 200px;
+}
+
+
+/* side bar styles */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 180px;
+    background-color: #033b8a;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    padding: 0px 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+
+.sidebar-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.sidebar-options ul {
+    padding: 0px;
+    list-style: none;
+}
+
+.sidebarlistnames {
+    padding: 13px 15px;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sidebarlistnames a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+.adminpage-icons {
+    margin-right: 15px;
+}
+
+.sidebarlistnames:hover {
+    background-color: rgb(208, 84, 84);
+}
+
+.sidebar-options .active-link {
+    background-color: rgb(237, 67, 67);
+    /* Full list item background when active */
+}
+
+.sidebar-options li.active-link a {
+    color: white;
+    /* Ensure text inside active link stays white */
+}
+
+.logout-div ul {
+    padding: 0px;
+    list-style: none;
+}
+
+.logout-div li {
+    border-radius: 10px;
+    padding: 15px 15px;
+    display: flex;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 1s ease;
+}
+
+.sidebar-heading {
+    padding: 15px 10px;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+
+/* Design of dashboard page */
+
+.dashboardhead-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0px;
+}
+
+.dashboardhead-div h3 {
+    color: #000000b4;
+    font-size: 2em;
+}
+
+.dashboardhead-div span {
+    color: rgb(100, 100, 242);
+}
+
+.dashboardFormain-div {
+    margin: 0px 35px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 15px 0px;
+}
+
+.dashboardForm {
+    margin: 10px 0px;
+}
+
+.dashboardForminputbox {
+    outline: none;
+    border: 1px solid rgba(75, 75, 75, 0.7);
+    /* Light black border */
+    padding: 10px 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.options {
+    outline: none;
+    border: 1px soild rgb(50, 50, 50);
+    padding: 10px 10px;
+    margin: 10px;
+    width: 150px;
+    border-radius: 5px;
+}
+
+.dashboardForminputbox:focus {
+    border: 1.5px solid rgb(80, 79, 79);
+}
+
+.dashboardformbutton {
+    padding: 10px 20px;
+    border-radius: 9px;
+    outline: none;
+    border: none;
+    background-color: rgb(244, 117, 71);
+    color: white;
+}
+
+.dashboardformbutton:hover {
+    cursor: pointer;
+}
+
+/* Styles for dashbooard table */
+
+/* styles for student count box */
+
+.studentscountmain-div {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0px;
+}
+
+.studentscountsub-div {
+    padding: 5px 15px;
+    background-color: rgb(97, 97, 235);
+    border-radius: 5px;
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+    /* Vertically center content */
+}
+
+.studentscountbox-div {
+    color: white;
+    max-width: 200px;
+    /* Set a max width for the box */
+    text-align: center;
+    /* Center-align the text */
+    overflow: hidden;
+    /* Hide any overflow */
+}
+
+.count {
+    font-size: 40px;
+    margin: 0px;
+    font-weight: bold;
+}
+
+/* table styles start here */
+
+.survey-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0px;
+}
+
+.survey-table th,
+.survey-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.survey-table th {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.survey-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.survey-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.survey-table td {
+    background-color: #fff;
+}
+
+/* parents feedback styles */
+
+.parentsfeedbackmain-div {
+    padding: 20px;
+    background: linear-gradient(to right, #f8f9fa, #e9ecef); /* Subtle gradient background */
+    border-radius: 10px; /* Rounded corners for the container */
+  }
+  
+  .parentsfeedback-head{
+    text-align: center;
+    color: rgb(66, 64, 64);
+    font-size: 2.2em; /* Increase font size for prominence */
+    font-weight: bold; /* Make the heading bold */
+    margin-bottom: 20px; /* Spacing below the heading */
+  }
+
+  
+.parentsgeneralfeedback-div{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+    color: rgb(67, 67, 67);
+}
+
+.parentsgeneralfeedback-div h1 {
+    margin: 0; /* Removes default margin around the h1 */
+    text-align: left; /* Aligns text to the left */
+}
+
+.feedbacksummary{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+  .parentfeedback-list {
+    width: 900px;
+    background: linear-gradient(to bottom, #ffffff, #f9f9f9); /* Soft gradient background for the list */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for the list */
+    border-radius: 10px;
+    list-style: none; /* Removes default list style */
+    padding: 20px; /* Adjusted padding */
+    margin: 10px 0; /* Adjusted margin */
+    color: rgb(83, 83, 83);
+    text-align: justify;
+    height: 500px;
+    overflow: auto;
+  }
+  
+  .parentfeedback-item {
+    padding: 15px;
+    margin-bottom: 20px; /* Space between items */
+    background-color: #ffffff; /* Background color for the item */
+    border-radius: 8px; /* Rounded corners */
+    border: 1px solid #ddd; /* Light border around items */
+    position: relative; /* For pseudo-element positioning */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+  }
+  
+  .parentfeedback-item::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background-color: #007bff; /* Colorful side bar */
+  }
+  
+  .parentfeedback-item:not(:last-child) {
+    border-bottom: 2px solid #f0f0f0; /* Light colored separator */
+  }
+  
+  .parentfeedback-item:hover {
+    background-color: #e9ecef; /* Light background on hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+  }
+  
+  .parentfeedback-item p {
+    line-height: 1.6em; /* Adjusted line height */
+    overflow: hidden; /* Hides overflowed text */
+    margin: 0; /* Remove default margin */
+    font-size: 1em; /* Slightly larger font size */
+    color: #555; /* Darker text color for better readability */
+  }
+  
+  .pagination{
+    list-style-type: none;
+    display: flex;
+  }
+
+  .page-item{
+    /* background-color: yellow; */
+    margin-right:5px ;
+  }
+
+.page-item a{
+  text-decoration: none;
+   margin: 0px 5px;
+   color: black;
+   font-size: 1.2em;
+}
+
+.page-itemactive a{
+  text-decoration: none;
+  margin: 0px 5px;
+  color: black;
+  font-size: 1.2em;
+  color: white;
+}
+
+.page-itemactive{
+    border-radius: 50%;
+    background-color: rgb(192, 192, 5);
+    font-size: 1.3em;
+    padding: 1px;
+}
+
+
+
+/* Styles for employer feedback */
+
+.employerfeedbackuserimg{
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+}
+.employerName {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    color: black;
+}
+
+.employerOrganization{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1em;
+    color: black;
+}
+
+.employerOrganization-div{
+    /* border: 1px solid red; */
+    margin: 10px 0px;
+}

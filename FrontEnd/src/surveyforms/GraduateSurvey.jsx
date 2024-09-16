@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState } from 'react';
-import SubmitBtn from '../components/SubmitBtn';
 const GraduateSurvey = ({ department }) => {
 
     const [ratings, updateRatings] = useState([]) // to update ratings

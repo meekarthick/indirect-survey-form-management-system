@@ -24,7 +24,7 @@ const ExtraCurricular = ({ department }) => {
     return (
         <div className='ExtraCurricular-maindiv'>
             <div className='ExtraCurricular-head'>
-                <h2>ExtraCurricular Survey</h2>
+                <h2>Extra Curricular Survey</h2>
                 <div className='ExtraCurricularnote'>{`As a Student of ${department} check the ability of yourself to the following statements and rate the performance on a 5-point scale with 5 - Excellent, 4- Very Good, 3 - Good,  2 - Average and 1- Poor`}</div>
             </div>
             <form>

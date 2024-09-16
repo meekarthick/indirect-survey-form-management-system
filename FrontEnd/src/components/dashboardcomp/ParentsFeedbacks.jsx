@@ -1,0 +1,213 @@
+import React, { useState } from 'react';
+
+const ParentsFeedbacks = () => {
+  const [feedbacks] = useState([
+    { feedbackText: 'I am deeply appreciative of the dedication and support shown to my child.I am delighted with the overall program and the support my child has received.I am delighted with the overall program and the support my child has received.I am delighted with the overall program and the support my child has received.I am delighted with the overall program and the support my child has received.  ' },
+    { feedbackText: 'I am incredibly satisfied with the educational environment provided.I am delighted with the overall program and the support my child has received.I am delighted with the overall program and the support my child has received.I am delighted with the overall program and the support my child has received.   ' },
+    { feedbackText: 'The faculty’s dedication and the supportive learning environment have been exceptional.' },
+    { feedbackText: 'I am thankful for the constant support and the excellent facilities provided.' },
+    { feedbackText: 'The performance and the overall experience have been commendable.I am delighted with the overall program and the support my child has received.I am delighted with the overall program and the support my child has received.I am delighted with the overall program and the support my child has received.' },
+    { feedbackText: 'I am pleased with the development and progress observed.' },
+    { feedbackText: 'Your support and the quality of the educational experience have been outstanding.I am delighted with the overall program and the support my child has received.I am delighted with the overall program and the support my child has received.I am delighted with the overall program and the support my child has received.' },
+    { feedbackText: 'I am delighted with the overall program and the support my child has received.I am delighted with the overall program and the support my child has received.' },
+    { feedbackText: 'The resources and the support provided have been valuable.' },
+    { feedbackText: 'The program has been good, and I see areas where improvements can be made.' },
+    { feedbackText: 'I am highly satisfied with the support and the overall educational experience.' },
+    { feedbackText: 'I am deeply appreciative of the dedication and support shown to my child.' },
+    { feedbackText: 'I am incredibly satisfied with the educational environment provided.' },
+    { feedbackText: 'The faculty’s dedication and the supportive learning environment have been exceptional.' },
+    { feedbackText: 'I am thankful for the constant support and the excellent facilities provided.' },
+    { feedbackText: 'The performance and the overall experience have been commendable.' },
+    { feedbackText: 'I am pleased with the development and progress observed.' },
+    { feedbackText: 'Your support and the quality of the educational experience have been outstanding.' },
+    { feedbackText: 'I am delighted with the overall program and the support my child has received.' },
+    { feedbackText: 'The resources and the support provided have been valuable.' },
+    { feedbackText: 'The program has been good, and I see areas where improvements can be made.' },
+    { feedbackText: 'I am highly satisfied with the support and the overall educational experience.' },
+    { feedbackText: 'I am deeply appreciative of the dedication and support shown to my child.' },
+    { feedbackText: 'I am incredibly satisfied with the educational environment provided.' },
+    { feedbackText: 'The faculty’s dedication and the supportive learning environment have been exceptional.' },
+    { feedbackText: 'I am thankful for the constant support and the excellent facilities provided.' },
+    { feedbackText: 'The performance and the overall experience have been commendable.' },
+    { feedbackText: 'I am pleased with the development and progress observed.' },
+    { feedbackText: 'Your support and the quality of the educational experience have been outstanding.' },
+    { feedbackText: 'I am delighted with the overall program and the support my child has received.' },
+    { feedbackText: 'The resources and the support provided have been valuable.' },
+    { feedbackText: 'The program has been good, and I see areas where improvements can be made.' },
+    { feedbackText: 'I am highly satisfied with the support and the overall educational experience.' },
+    { feedbackText: 'I am deeply appreciative of the dedication and support shown to my child.' },
+    { feedbackText: 'I am incredibly satisfied with the educational environment provided.' },
+    { feedbackText: 'The faculty’s dedication and the supportive learning environment have been exceptional.' },
+    { feedbackText: 'I am thankful for the constant support and the excellent facilities provided.' },
+    { feedbackText: 'The performance and the overall experience have been commendable.' },
+    { feedbackText: 'I am pleased with the development and progress observed.' },
+    { feedbackText: 'Your support and the quality of the educational experience have been outstanding.' },
+    { feedbackText: 'I am delighted with the overall program and the support my child has received.' },
+    { feedbackText: 'The resources and the support provided have been valuable.' },
+    { feedbackText: 'The program has been good, and I see areas where improvements can be made.' },
+    { feedbackText: 'I am highly satisfied with the support and the overall educational experience.' },
+    { feedbackText: 'I am deeply appreciative of the dedication and support shown to my child.' },
+    { feedbackText: 'I am incredibly satisfied with the educational environment provided.' },
+    { feedbackText: 'The faculty’s dedication and the supportive learning environment have been exceptional.' },
+    { feedbackText: 'I am thankful for the constant support and the excellent facilities provided.' },
+    { feedbackText: 'The performance and the overall experience have been commendable.' },
+    { feedbackText: 'I am pleased with the development and progress observed.' },
+    { feedbackText: 'Your support and the quality of the educational experience have been outstanding.' },
+    { feedbackText: 'I am delighted with the overall program and the support my child has received.' },
+    { feedbackText: 'The resources and the support provided have been valuable.' },
+    { feedbackText: 'The program has been good, and I see areas where improvements can be made.' },
+    { feedbackText: 'I am highly satisfied with the support and the overall educational experience.' },
+    { feedbackText: 'I am deeply appreciative of the dedication and support shown to my child.' },
+    { feedbackText: 'I am incredibly satisfied with the educational environment provided.' },
+    { feedbackText: 'The faculty’s dedication and the supportive learning environment have been exceptional.' },
+    { feedbackText: 'I am thankful for the constant support and the excellent facilities provided.' },
+    { feedbackText: 'The performance and the overall experience have been commendable.' },
+    { feedbackText: 'I am pleased with the development and progress observed.' },
+    { feedbackText: 'Your support and the quality of the educational experience have been outstanding.' },
+    { feedbackText: 'I am delighted with the overall program and the support my child has received.' },
+    { feedbackText: 'The resources and the support provided have been valuable.' },
+  ]);
+
+  const ParentSurveyTable = [
+    { question: "Interaction with the Department ." },
+    { question: "Improvement in technical knowledge, soft skills, ethics and morality." },
+    { question: "Faculty members, technical and non-technical staff members are cooperative." },
+    { question: "Counseling and guidance." },
+    { question: "Class room and Laboratory facilities." },
+    { question: "ICT facilities." },
+    { question: "Learning center facilities." },
+    { question: "Transport facilities." },
+    { question: "Hostel, Mess & Cafeteria facilities." },
+  ]
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const feedbacksPerPage = 5;
+
+  // Determine the feedbacks to display on the current page
+  const indexOfLastFeedback = currentPage * feedbacksPerPage;
+  const indexOfFirstFeedback = indexOfLastFeedback - feedbacksPerPage;
+  const currentFeedbacks = feedbacks.slice(indexOfFirstFeedback, indexOfLastFeedback);
+
+  // Change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  return (
+    <div className="parentsfeedbackmain-div">
+      <div>
+        <h1 className='parentsfeedback-head'>Parents Feedbacks</h1>
+      </div>
+      <div>
+        <form>
+          <table className='ParentSurvey-table'>
+            <thead>
+              <tr>
+                <th>s.no</th>
+                <th>QUESTIONNAIRE</th>
+                <th>Strongly Agree</th>
+                <th>Agree</th>
+                <th>Partially Agree</th>
+                <th>Neutral</th>
+                <th>Disagree</th>
+                <th>Average</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                ParentSurveyTable.map((data, index) => (
+                  <tr key={index}>
+                    <td>{index + 1}</td>
+                    <td>{data.question}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </form>
+      </div>
+      <div className='parentsgeneralfeedback-div'>
+        <h1>General Feedbacks</h1>
+      </div>
+      <div className='feedbacksummary'>
+        <ul className="parentfeedback-list">
+          {currentFeedbacks.map((feedback, index) => (
+            <li key={index} className="parentfeedback-item">
+              <p>{feedback.feedbackText}</p>
+            </li>
+          ))}
+        </ul>
+        {/* Pagination */}
+        <Pagination
+          feedbacksPerPage={feedbacksPerPage}
+          totalFeedbacks={feedbacks.length}
+          paginate={paginate}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
+      </div>
+
+
+    </div>
+  );
+};
+
+const Pagination = ({ feedbacksPerPage, totalFeedbacks, paginate, currentPage, setCurrentPage }) => {
+  const [pageGroup, setPageGroup] = useState(1); // Current group of 5 pages
+  const pagesPerGroup = 5;
+
+  // Calculate the total number of pages
+  const totalPages = Math.ceil(totalFeedbacks / feedbacksPerPage);
+  const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
+
+  // Determine the pages to display in the current group
+  const indexOfLastPageInGroup = pageGroup * pagesPerGroup;
+  const indexOfFirstPageInGroup = indexOfLastPageInGroup - pagesPerGroup;
+  const currentPageNumbers = pageNumbers.slice(indexOfFirstPageInGroup, indexOfLastPageInGroup);
+
+  const handlePrevious = () => {
+    if (pageGroup * pagesPerGroup - pagesPerGroup > 0)
+      setCurrentPage(pageGroup * pagesPerGroup - pagesPerGroup)
+    if (pageGroup > 1) {
+      setPageGroup(pageGroup - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if ((pageGroup * pagesPerGroup + 1) < totalPages)
+      setCurrentPage(pageGroup * pagesPerGroup + 1)
+    if (indexOfLastPageInGroup < totalPages) {
+      setPageGroup(pageGroup + 1);
+    }
+  };
+
+  return (
+    <nav>
+      <ul className="pagination">
+        <li className="page-item">
+          <a onClick={handlePrevious} href="#!" className="page-link" aria-disabled={pageGroup === 1}>
+            &laquo;
+          </a>
+        </li>
+        {currentPageNumbers.map((number) => (
+          <li key={number} className={currentPage === number ? 'page-itemactive' : 'page-item'}>
+            <a onClick={() => paginate(number)} href="#!" className="page-link">
+              {number}
+            </a>
+          </li>
+        ))}
+        <li className="page-item">
+          <a onClick={handleNext} href="#!" className="page-link" aria-disabled={indexOfLastPageInGroup >= totalPages}>
+            &raquo;
+          </a>
+        </li>
+      </ul>
+    </nav>
+  );
+};
+
+export default ParentsFeedbacks;

@@ -1,5 +1,5 @@
 import React from 'react'
-import Points from './poscomp/Points'
+import Points from './Points'
 const POpoints = () => {
   return (
     <div className='posdiv'>

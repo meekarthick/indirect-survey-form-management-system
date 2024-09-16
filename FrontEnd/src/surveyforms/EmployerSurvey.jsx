@@ -18,13 +18,13 @@ const EmployerSurvey = ({ department }) => {
         { question: "Ability to design and develop solutions with a comprehension of the design trade-offs involved." },
         { question: "Knowledge about contemporary fields." },
         { question: "System Engineering Skills (for building Hardware/Software/Products/Designs)" },
-        { question: "Exposure to the impact of Information and Communication Technology (ICT) solutions on the environment and Society."},
-        {question:  "Knowledge of sustainable product development."},
-        {question: "Ethical Conduct/Ethical behaviour."},
-        {question: "Coordination and collaboration."},
-        {question: "Communication."},
-        {question: "Project management Skills."},
-        {question: "Life Skills (Time management and Prioritization)"}
+        { question: "Exposure to the impact of Information and Communication Technology (ICT) solutions on the environment and Society." },
+        { question: "Knowledge of sustainable product development." },
+        { question: "Ethical Conduct/Ethical behaviour." },
+        { question: "Coordination and collaboration." },
+        { question: "Communication." },
+        { question: "Project management Skills." },
+        { question: "Life Skills (Time management and Prioritization)" }
     ]
 
     return (
@@ -74,6 +74,21 @@ const EmployerSurvey = ({ department }) => {
             </form>
             <div className='FormBtndiv'>
                 <button className='FormBtn' onClick={handleEmployerSurveysubmit}>SUBMIT</button>
+            </div>
+            <div>
+                <div className='ParentSurvey-head'>
+                    <h2>General Feedback</h2>
+                    <div className='ParentSurveynote'>Kindly provide your valuable insights to improve the skills for students</div>
+                </div>
+                <form className='feedbackBox-main'>
+                    <textarea
+                        type='text'
+                        className='feedback-box'
+                    />
+                    <div className='GeneralFBbutto-div'>
+                        <button className='FeedbackFormBtn'>SUBMIT</button>
+                    </div>
+                </form>
             </div>
         </div>
     )

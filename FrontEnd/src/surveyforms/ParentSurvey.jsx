@@ -26,64 +26,71 @@ const ParentSurvey = () => {
 
     return (
         <div className='ParentSurvey-maindiv'>
-            <div className='ParentSurvey-head'>
-                <h2>Parent Feedback</h2>
+            <div>
+                <div className='ParentSurvey-head'>
+                    <h2>Parent Feedback</h2>
+                </div>
                 <div className='ParentSurveynote'>As a parent, give the feedback on a 5-point scale with Excellent, Very Good, Good, Average and poor</div>
+                <form>
+                    <table className='ParentSurvey-table'>
+                        <thead>
+                            <tr>
+                                <th>s.no</th>
+                                <th>QUESTIONNAIRE</th>
+                                <th>Strongly Agree</th>
+                                <th>Agree</th>
+                                <th>Partially Agree</th>
+                                <th>Neutral</th>
+                                <th>Disagree</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                ParentSurveyTable.map((data, index) => (
+                                    <tr key={index}>
+                                        <td>{index + 1}</td>
+                                        <td>{data.question}</td>
+                                        {
+                                            [5, 4, 3, 2, 1].map((value) => (
+                                                <td key={value}>
+                                                    <div className='radio-container'>
+                                                        <input
+                                                            type='radio'
+                                                            name={`ParentSurvey-rating ${index + 1}`}
+                                                            checked={ParentSurvey[index] == value}
+                                                            onChange={() => handleParentSurveyRatings(index, value)}
+                                                        />
+                                                    </div>
+                                                </td>
+                                            ))
+                                        }
+                                    </tr>
+                                ))
+                            }
+                        </tbody>
+                    </table>
+                    <div className='ParentFormBtndiv'>
+                        <button className='ParentFormBtn' onClick={handleParentSurveysubmit}>SUBMIT</button>
+                    </div>
+                </form>
+
             </div>
-            <form>
-                <table className='ParentSurvey-table'>
-                    <thead>
-                        <tr>
-                            <th>s.no</th>
-                            <th>QUESTIONNAIRE</th>
-                            <th>Strongly Agree</th>
-                            <th>Agree</th>
-                            <th>Partially Agree</th>
-                            <th>Neutral</th>
-                            <th>Disagree</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            ParentSurveyTable.map((data, index) => (
-                                <tr key={index}>
-                                    <td>{index + 1}</td>
-                                    <td>{data.question}</td>
-                                    {
-                                        [5, 4, 3, 2, 1].map((value) => (
-                                            <td key={value}>
-                                                <div className='radio-container'>
-                                                    <input
-                                                        type='radio'
-                                                        name={`ParentSurvey-rating ${index + 1}`}
-                                                        checked={ParentSurvey[index] == value}
-                                                        onChange={() => handleParentSurveyRatings(index, value)}
-                                                    />
-                                                </div>
-                                            </td>
-                                        ))
-                                    }
-                                </tr>
-                            ))
-                        }
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td>{ParentSurveyTable.length + 1}</td>
-                            <td>Any other Feedback</td>
-                            <td colSpan="5" className='feedback-div'>
-                                <input
-                                    type='text'
-                                    className='feedback-box'
-                                />
-                            </td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </form>
-            <div className='FormBtndiv'>
-                <button className='FormBtn' onClick={handleParentSurveysubmit}>SUBMIT</button>
+            <div>
+                <div className='ParentSurvey-head'>
+                    <h2>General Feedback</h2>
+                    <div className='ParentSurveynote'>Kindly provide, if there is any other general feedback  that you have</div>
+                </div>
+                <form className='feedbackBox-main'>
+                    <textarea
+                        type='text'
+                        className='feedback-box'
+                    />
+                    <div className='GeneralFBbutto-div'>
+                        <button className='FeedbackFormBtn' onClick={handleParentSurveysubmit}>SUBMIT</button>
+                    </div>
+                </form>
             </div>
+
         </div>
     )
 }

@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+body,
+h2,
+h1,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    box-sizing: border-box;
+}
+
+.homemain-div {
+    margin-top: 70px; /* Add padding equal to the navbar's height to prevent content from hiding behind it */
+} 
+
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    width: 100%;
+    transition: transform 1s ease-in-out;
+}
+
+.slider img {
+    max-width: 100vw;
+    height: auto;
+}
+
+@keyframes slide {
+    0% {
+        transform: translatey(0);
+    }
+
+    100% {
+        transform: translatey(-100%);
+    }
+}
+
+.navbar-maindiv {
+    background-color: #033b8a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    position: fixed; /* Change from sticky to fixed */
+    top: 0; /* Ensure the navbar stays at the top */
+    width: 100%; /* Ensure the navbar spans the entire width */
+    z-index: 1000; /* Keep the navbar on top of other content */
+}
+
+
+.navbar-logodiv {
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-maindiv img {
+    height: 50px;
+    width: 400px;
+}
+
+.navbar-linkdiv {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-linkdiv ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-linkdiv ul li {
+    margin-right: 20px;
+}
+
+.navbar-linkdiv ul li a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.632);
+    margin: 0px 10px;
+    font-size: 1.1em;
+}
+
+.navbar-linkdiv ul li a:hover {
+    color: rgb(255, 255, 255);
+}
+
+
+/* main content styles */
+
+
+.mainContent-div {
+    margin: 20px auto; 
+    padding: 20px; 
+    max-width: 90vw;
+    box-sizing: border-box; 
+    background-color: #f9f9f9; 
+    border-radius: 8px; 
+    overflow-x: hidden; 
+}
+
+.mainContent-Headdiv {
+    margin-bottom: 20px; 
+}
+
+/* Style for the heading */
+.mainContent-Headdiv h1 {
+    font-size: 2rem; 
+    margin: 0; 
+    color: #333; 
+}
+
+.mainContent-Headdiv h1 span {
+    color: #007bff; 
+}
+
+.mainContent-paradiv {
+    display: flex;
+    align-items: center; /* Center-align items vertically */
+    gap: 70px; /* Space between elements */
+    line-height: 1.6;
+}
+
+
+.mainContent-paradiv p {
+    font-size: 1.1rem; 
+    margin: 0;
+    color: #555; 
+    text-align: justify;
+    width: 600px; /* Fixed width for consistency */
+}
+
+.bitcoverimage-div img {
+    height: 250px;
+    width: 400px;
+    object-fit: cover; /* Ensures the image maintains aspect ratio */
+}
+
+/* footer styles */
+
+.footermain-div{
+    background-color:  #033b8a;
+}
+
+.footerdiv-1{
+    display: flex;
+    /* border: 1px solid rgb(255, 255, 255); */
+    justify-content: space-around;
+    padding: 20px 0px;
+}
+
+.footerdiv1subdiv-1{
+    display: flex;
+    /* border: 1px solid rgb(255, 255, 255); */
+    width: 250px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+.footerdiv1subdiv-1 img{
+    height: 70px;
+    width: 70px;
+}
+
+.collegegradepara{
+    font-size: 6px;
+}
+
+.collegename{
+    padding: 0px;
+    margin: 0px;
+}
+
+.phonenumber{
+    text-decoration: none;
+    color: white;
+}
+
+.phonelogo, .locationlogo{
+    margin: 10px;
+}
+
+.maillogo{
+    margin: 0px 10px;
+}
+
+.footerdiv-2{
+    border-top: 2px solid white;
+    display: flex; 
+    justify-content: space-around;
+    color: white;
+    font-size: 1.2em;
+}
