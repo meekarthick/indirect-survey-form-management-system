@@ -2,9 +2,16 @@ import React from 'react'
 import bit_logo from '../components/images/bit_logo.png'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const EmployerSignUp = () => {
 
+    const [showPassword, setShowPassword] = useState(false);
+
+    // Function to toggle password visibility
+    const togglePasswordVisibility = () => {
+      setShowPassword((prevState) => !prevState);
+    };
 
     return (
         <div>
@@ -28,7 +35,7 @@ const EmployerSignUp = () => {
                                     placeholder='Enter your name'
                                 />
                             </div>
-                            {/* <div className='main'>
+                            <div className='main'>
                                 <label className='Name'>
                                     <span>username</span>
                                 </label>
@@ -56,7 +63,7 @@ const EmployerSignUp = () => {
                                         {showPassword ? <FaEyeSlash /> : <FaEye />}
                                     </button>
                                 </div>
-                            </div> */}
+                            </div>
                             <div className='main'>
                                 <label className='Name'>
                                     <span>Designation</span>

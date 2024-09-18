@@ -25,7 +25,6 @@ h1, h2, h3, h4, h5, h6 {
    box-shadow: 0 0 5px 2px #b5b2b2; 
    border-radius:15px;
    padding: 10px 55px;
-   /* margin: 10px 0px; */
 }
 
 .Signup-head{
@@ -106,9 +105,10 @@ h1, h2, h3, h4, h5, h6 {
     border: none;
     background: transparent;
     cursor: pointer;
-    color: #333; /* Adjust color as needed */
+    color: #333; 
 }
 
 .toggle-password:focus {
     outline: none;
 }
+

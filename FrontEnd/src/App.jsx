@@ -17,6 +17,7 @@ import AdminUI from './UIs/AdminUI';
 import DashBoard from './components/adminpagecompo/DashBoard';
 import Logs from './components/adminpagecompo/Logs';
 import UserManagement from './components/adminpagecompo/UserManagement';
+import AluminiSignUp from './SignUpForms/AluminiSignUp';
 function App() {
 
   return (
@@ -27,7 +28,7 @@ function App() {
         <Route path="/employerlogin" element={<EmployerLogin />} />
         <Route path="/studentlogin" element={<StudentLogin />} />
         <Route path="/adminlogin" element={<AdminLogin />} />
-        <Route path="/alumnilogin" element={<AlumniLogin />} />
+        <Route path="/alumnisignup" element={<AluminiSignUp />} />
         <Route path="/studentUI" element={<StudentUI />} />
         <Route path="/alumniUI" element={<AlumniUI />} />
         <Route path="/employerUI" element={<EmployerUI />} />
