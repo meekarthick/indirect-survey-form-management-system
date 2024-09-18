@@ -13,8 +13,8 @@ const DashBoard = () => {
         <h3>Survey <span>Dashboard</span> and <span>Reports</span></h3>
       </div>
       <DashBoardForm />
-      {/* <DashboardTable /> */}
-      {/* <ParentsFeedbacks /> */}
+      <DashboardTable />
+      <ParentsFeedbacks />
       <EmployerFeedBAck />
     </div>
   )
