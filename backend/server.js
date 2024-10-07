@@ -1,21 +1,32 @@
 import express from "express"
 import dotenv from "dotenv"
+import connectToMongoDB from "./mongoDB/connect.js"
+import cookieParser from "cookie-parser"
+import authRoutes from "./routers/auth.route.js"
 
 dotenv.config()
+
 const app = express()
-<<<<<<< HEAD
-=======
-
-const PORT = process.env.PORT 
-
-console.log(PORT);
->>>>>>> d11cb2237f1485a8131bdf4fba55450dc6d74a66
 
 
-app.listen(process.env.PORT, () =>{
-    console.log(`Server running ${process.env.PORT}`);
-})
+const ServerPORT = process.env.PORT || 7000
+console.log(ServerPORT);
+
+app.use(express.json());
+app.use(cookieParser());
+
+
+//middleware for employer signup
+app.use('/api/auth',authRoutes)
 
 app.get('/',(req,res)=>{
-    res.send("Hello")
+    res.send("Hello World")
+})
+
+
+//connecting mongoDB
+
+app.listen(ServerPORT,() =>{
+    connectToMongoDB();
+    console.log("Server is runing ");
 })
