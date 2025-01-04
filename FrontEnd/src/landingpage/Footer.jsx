@@ -1,5 +1,5 @@
 import React from 'react'
-import bitWhitelogo from '../images/bitWhitelogo.png'
+import bitWhitelogo from '../assets/images/bitWhitelogo.png'
 import { FaLocationDot } from "react-icons/fa6";
 import { IoCallOutline } from "react-icons/io5";
 import { HiOutlineMail } from "react-icons/hi";
@@ -33,7 +33,7 @@ const Footer = () => {
           </div>
           <div className='collegenamediv '>
             <a className='phonenumber' href="tel:+1234567890">+91 4295 226000</a><br></br>
-            <a className='phonenumber' href="tel:+1987654321">+91 99429 21289</a>
+            <a className='phonenumber' href="tel:+1987654321">+91 99429 21287</a>
           </div>
         </div>
         <div className='footerdiv1subdiv-1'>

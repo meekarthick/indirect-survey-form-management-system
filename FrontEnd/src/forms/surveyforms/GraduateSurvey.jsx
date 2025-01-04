@@ -89,7 +89,7 @@ const GraduateSurvey = ({ department }) => {
             ]
         },
         {
-            gri: [
+            agri: [
                 { question: "Model, design and analyze agricultural machineries and implement to increase productivity, improve land use and conserve resources like seed, water, fertilizer,pesticide and fuel" },
                 { question: "To improvise better ways to minimize the crop loss from field damage during postharvest management and energy utilization, sorting, processing and packaging" }
             ]

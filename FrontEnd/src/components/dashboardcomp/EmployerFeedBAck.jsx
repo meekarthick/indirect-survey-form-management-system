@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
-import user from '../images/user.png'
+import user from '..//../assets/images/user.png'
 const EmployerFeedBAck = () => {
 
     const [feedbacks] = useState([

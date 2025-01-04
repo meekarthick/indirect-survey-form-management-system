@@ -3,11 +3,11 @@ import './css/index.css'
 import './css/signup.css'
 import './css/login.css'
 import './css/home.css'
-import EmployerLogin from './LoginForms/EmployerLogin';
-import EmployerSignUp from './SignUpForms/EmployerSignUp';
-import StudentLogin from './LoginForms/StudentLogin';
-import AlumniLogin from './LoginForms/AlumniLogin';
-import AdminLogin from './LoginForms/AdminLogin';
+import EmployerLogin from './forms/LoginForms/EmployerLogin';
+import EmployerSignUp from './forms/SignUpForms/EmployerSignUp';
+import StudentLogin from './forms/LoginForms/StudentLogin';
+import AlumniLogin from './forms/LoginForms/AlumniLogin';
+import AdminLogin from './forms/LoginForms/AdminLogin';
 import Home from './UIs/Home';
 import StudentUI from './UIs/StudentUI';
 import AlumniUI from './UIs/AlumniUI';
@@ -17,7 +17,7 @@ import AdminUI from './UIs/AdminUI';
 import DashBoard from './components/adminpagecompo/DashBoard';
 import Logs from './components/adminpagecompo/Logs';
 import UserManagement from './components/adminpagecompo/UserManagement';
-import AluminiSignUp from './SignUpForms/AluminiSignUp';
+import AluminiSignUp from './forms/SignUpForms/AluminiSignUp';
 function App() {
 
   return (

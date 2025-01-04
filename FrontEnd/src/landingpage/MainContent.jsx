@@ -1,5 +1,5 @@
 import React from 'react'
-import bitcoverimage from '../images/bitcoverimage.jpeg'
+import bitcoverimage from '../assets/images/bitcoverimage.jpeg'
 const MainContent = () => {
     return (
         <div className='mainContent-div'>

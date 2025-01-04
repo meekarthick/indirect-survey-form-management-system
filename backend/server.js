@@ -3,7 +3,8 @@ import dotenv from "dotenv"
 import connectToMongoDB from "./mongoDB/connect.js"
 import cookieParser from "cookie-parser"
 import authRoutes from "./routers/auth.route.js"
-
+import { fetchQuestions } from "./fetch_and_post/fetchUserQuestions.js"
+import questionRoute from "./routers/question.route.js"
 dotenv.config()
 
 const app = express()
@@ -18,6 +19,9 @@ app.use(cookieParser());
 
 //middleware for employer signup
 app.use('/api/auth',authRoutes)
+
+// api for fecting questions
+app.use('/api/questions',questionRoute)
 
 app.get('/',(req,res)=>{
     res.send("Hello World")

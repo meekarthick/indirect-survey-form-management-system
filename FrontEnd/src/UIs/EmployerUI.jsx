@@ -1,5 +1,5 @@
 import React from 'react'
-import EmployerSurvey from '../surveyforms/EmployerSurvey'
+import EmployerSurvey from '../forms/surveyforms/EmployerSurvey'
 import Header from '../components/Header'
 const EmployerUI = () => {
     return (

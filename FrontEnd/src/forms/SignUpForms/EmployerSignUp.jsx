@@ -1,9 +1,18 @@
 import React from 'react'
-import bit_logo from '../components/images/bit_logo.png'
-import { Link } from 'react-router-dom';
+import bit_logo from '..//../assets/images/bit_logo.png'
 import { useState } from 'react';
-import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Import icons for show/hide
-const StudentSignUp = () => {
+import { Link } from 'react-router-dom';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+
+const EmployerSignUp = () => {
+
+    const [showPassword, setShowPassword] = useState(false);
+
+    // Function to toggle password visibility
+    const togglePasswordVisibility = () => {
+      setShowPassword((prevState) => !prevState);
+    };
+
     return (
         <div>
             <div className='SignUpmain-div'>
@@ -23,54 +32,73 @@ const StudentSignUp = () => {
                                 <input
                                     className='input-feild'
                                     type='text'
-                                    placeholder='Student name'
+                                    placeholder='Enter your name'
                                 />
                             </div>
                             <div className='main'>
                                 <label className='Name'>
-                                    <span>Roll no</span>
+                                    <span>username</span>
                                 </label>
                                 <input
                                     className='input-feild'
                                     type='text'
-                                    placeholder='Student Roll no'
+                                    placeholder='Enter username'
                                 />
                             </div>
                             <div className='main'>
                                 <label className='Name'>
-                                    <span>Department</span>
+                                    <span>Password</span>
+                                </label>
+                                <div className='password-container'>
+                                    <input
+                                        className='input-feild'
+                                        type={showPassword ? 'text' : 'password'}
+                                        placeholder='Enter password'
+                                    />
+                                    <button
+                                        type='button'
+                                        className='toggle-password'
+                                        onClick={togglePasswordVisibility}
+                                    >
+                                        {showPassword ? <FaEyeSlash /> : <FaEye />}
+                                    </button>
+                                </div>
+                            </div>
+                            <div className='main'>
+                                <label className='Name'>
+                                    <span>Designation</span>
                                 </label>
                                 <input
                                     className='input-feild'
                                     type='text'
-                                    placeholder='Student Department'
+                                    placeholder='Enter your Designation'
                                 />
                             </div>
                             <div className='main'>
                                 <label className='Name'>
-                                    <span>Batch</span>
+                                    <span>Organization</span>
                                 </label>
                                 <input
                                     className='input-feild'
                                     type='text'
-                                    placeholder='Passout year'
+                                    placeholder='Oragnization name'
                                 />
                             </div>
                             <div className='main'>
                                 <label className='Name'>
                                     <span>E-mail</span>
                                 </label>
-                                <input   
-                                className='input-feild'
-                                type='e-mail'
-                                placeholder='Bitsathy mail'
-                                    
+                                <input
+                                    className='input-feild'
+                                    type='e-mail'
+                                    placeholder='Enter organization mail'
                                 />
                             </div>
+                            <div>
+                                <Link to={'/employerlogin'} >Already have an account</Link>
+                            </div>
                             <div className='Sigup-submit'>
-                                <button type='submit'>
-                                    Sign Up
-                                </button>
+                                <button type='submit'>Sign Up</button>
                             </div>
                         </form>
                     </div>
@@ -80,4 +108,4 @@ const StudentSignUp = () => {
     )
 }
 
-export default StudentSignUp
+export default EmployerSignUp

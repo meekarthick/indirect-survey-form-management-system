@@ -1,5 +1,5 @@
 import React from 'react'
-import bit_logo from '../components/images/bit_logo.png'
+import bit_logo from '..//../assets/images/bit_logo.png'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Import icons for show/hide

@@ -1,6 +1,6 @@
 import React from 'react'
 import ParentHeader from '../components/ParentHeader'
-import ParentSurvey from '../surveyforms/ParentSurvey'
+import ParentSurvey from '../forms/surveyforms/ParentSurvey'
 const ParentUI = () => {
   return (
     <div>

@@ -1,9 +1,9 @@
 import React from 'react'
 import Header from '../components/Header'
 import POpoints from '../components/POpoints'
-import GraduateSurvey from '../surveyforms/GraduateSurvey'
-import CoCurricularForm from '../surveyforms/CoCurricularForm'
-import ExtraCurricular from '../surveyforms/ExtraCurricular'
+import GraduateSurvey from '../forms/surveyforms/GraduateSurvey'
+import CoCurricularForm from '../forms/surveyforms/CoCurricularForm'
+import ExtraCurricular from '../forms/surveyforms/ExtraCurricular'
 
 const StudentUI = () => {
   return (
@@ -11,7 +11,7 @@ const StudentUI = () => {
       <Header />
       <POpoints />
       <GraduateSurvey 
-        department={'CSE'}
+        department={'AIML'}
       />
       <CoCurricularForm
         department={'EIE'}

@@ -1,5 +1,5 @@
 import React from 'react'
-import bitlogo from './images/bitlogo.png'
+import bitlogo from '../assets/images/bitlogo.png'
 const ParentHeader = () => {
     return (
         <div className='parentheadimg-div'>

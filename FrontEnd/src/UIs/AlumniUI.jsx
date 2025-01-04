@@ -1,5 +1,5 @@
 import React from 'react'
-import AlumniSurvey from '../surveyforms/AlumniSurvey'
+import AlumniSurvey from '../forms/surveyforms/AlumniSurvey'
 import Header from '../components/Header'
 const AlumniUI = () => {
   return (

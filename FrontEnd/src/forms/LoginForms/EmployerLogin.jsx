@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import bit_logo from '../components/images/bit_logo.png';
+import bit_logo from '..//../assets/images/bit_logo.png';
 import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Import icons for show/hide
 import { Link } from 'react-router-dom';
 const EmployerLogin = () => {

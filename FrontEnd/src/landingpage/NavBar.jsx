@@ -1,5 +1,5 @@
 import React from 'react'
-import bitfulllogo from '../images/bitfulllogo.jpeg'
+import bitfulllogo from '../assets/images/bitfulllogo.jpeg'
 import { Link } from 'react-router-dom'
 
 const NavBar = () => {
