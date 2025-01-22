@@ -20,8 +20,12 @@ app.use(cookieParser());
 //middleware for employer signup
 app.use('/api/auth',authRoutes)
 
+
+
 // api for fecting questions
 app.use('/api/questions',questionRoute)
+
+
 
 app.get('/',(req,res)=>{
     res.send("Hello World")

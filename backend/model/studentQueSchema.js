@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-
 const studentQuestionSchema = new mongoose.Schema({
     question: {
         type: String,
@@ -9,6 +8,12 @@ const studentQuestionSchema = new mongoose.Schema({
         type: String,
         enum: ['Core', 'CoCurricular', 'ExtraCurricular', 'DepartmentSpecific'],
         required: true
+    },
+    pointNumber : {
+        type : Number,
+        required : function() {
+            ['Core','ExtraCurricular','CoCurricular'].includes(this.category)
+        }
     },
     department: {
         type: String,

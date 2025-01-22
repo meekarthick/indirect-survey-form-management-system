@@ -151,36 +151,36 @@ const alumniQuestions = [
 // student questions
 
 const coreQuestions = [
-    { question: "Apply knowledge of mathematics, science, engineering fundamentals and an engineering specialization to the solution of complex engineering problems.", category: "Core" },
-    { question: "Identify, formulate, research literature and analyze complex engineering problems to reach substantiated conclusions using first principles of mathematics, natural sciences and engineering sciences.", category: "Core" },
-    { question: "Design solutions for complex engineering problems and design system components or processes that meet specified needs with appropriate consideration for public health and safety, cultural, societal and environmental considerations.", category: "Core" },
-    { question: "Investigate complex problems using research-based knowledge and research methods including design of experiments, analysis and interpretation of data and synthesis of information to provide valid conclusions.", category: "Core" },
-    { question: "Create, select and apply appropriate techniques, resources and modern engineering and IT tools including prediction and modeling to complex engineering activities with an understanding of the limitations.", category: "Core" },
-    { question: "Apply reasoning informed by contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to professional engineering practice.", category: "Core" },
-    { question: "Understand the impact of professional engineering solutions in societal and environmental contexts and demonstrate knowledge of and need for sustainable development.", category: "Core" },
-    { question: "Apply ethical principles and commit to professional ethics and responsibilities and norms of engineering practice.", category: "Core" },
-    { question: "Function effectively as an individual, and as a member or leader in diverse teams and in multi-disciplinary settings.", category: "Core" },
-    { question: "Communicate effectively on complex engineering activities with the engineering community and with society at large, such as being able to comprehend and write effective reports and design documentation, make effective presentations and give and receive clear instructions.", category: "Core" },
-    { question: "Demonstrate knowledge and understanding of engineering and management principles and apply these to one’s own work, as a member and leader in a team, to manage projects and in multidisciplinary environments.", category: "Core" },
-    { question: "Recognize the need for and have the preparation and ability to engage in independent and lifelong learning in the broadest context of technological change.", category: "Core" }
+    { question: "Apply knowledge of mathematics, science, engineering fundamentals and an engineering specialization to the solution of complex engineering problems.", category: "Core",pointNumber:1 },
+    { question: "Identify, formulate, research literature and analyze complex engineering problems to reach substantiated conclusions using first principles of mathematics, natural sciences and engineering sciences.", category: "Core",pointNumber:2 },
+    { question: "Design solutions for complex engineering problems and design system components or processes that meet specified needs with appropriate consideration for public health and safety, cultural, societal and environmental considerations.", category: "Core",pointNumber:3 },
+    { question: "Investigate complex problems using research-based knowledge and research methods including design of experiments, analysis and interpretation of data and synthesis of information to provide valid conclusions.", category: "Core",pointNumber:4 },
+    { question: "Create, select and apply appropriate techniques, resources and modern engineering and IT tools including prediction and modeling to complex engineering activities with an understanding of the limitations.", category: "Core",pointNumber:5 },
+    { question: "Apply reasoning informed by contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to professional engineering practice.", category: "Core",pointNumber:6 },
+    { question: "Understand the impact of professional engineering solutions in societal and environmental contexts and demonstrate knowledge of and need for sustainable development.", category: "Core",pointNumber:7 },
+    { question: "Apply ethical principles and commit to professional ethics and responsibilities and norms of engineering practice.", category: "Core",pointNumber:8 },
+    { question: "Function effectively as an individual, and as a member or leader in diverse teams and in multi-disciplinary settings.", category: "Core",pointNumber:9 },
+    { question: "Communicate effectively on complex engineering activities with the engineering community and with society at large, such as being able to comprehend and write effective reports and design documentation, make effective presentations and give and receive clear instructions.", category: "Core",pointNumber:10 },
+    { question: "Demonstrate knowledge and understanding of engineering and management principles and apply these to one’s own work, as a member and leader in a team, to manage projects and in multidisciplinary environments.", category: "Core",pointNumber:11 },
+    { question: "Recognize the need for and have the preparation and ability to engage in independent and lifelong learning in the broadest context of technological change.", category: "Core",pointNumber:12 }
 ];
 
 
 const coCurricularQuestions = [
-    { question: "Ability to implement ideas as a team and make it into a workable product.", category: "CoCurricular" },
-    { question: "Ability to communicate the right solutions effectively in the form of reports, presentations with its possibility of getting deployed.", category: "CoCurricular" },
-    { question: "Ability to write papers in standard format for journals.", category: "CoCurricular" },
-    { question: "Ability to organize events as a member or leader.", category: "CoCurricular" },
-    { question: "Ability to deliver ideas effectively in a public forum.", category: "CoCurricular" },
-    { question: "Ability to compete with others in events.", category: "CoCurricular" }
+    { question: "Ability to implement ideas as a team and make it into a workable product.", category: "CoCurricular",pointNumber:1 },
+    { question: "Ability to communicate the right solutions effectively in the form of reports, presentations with its possibility of getting deployed.", category: "CoCurricular",pointNumber:2 },
+    { question: "Ability to write papers in standard format for journals.", category: "CoCurricular",pointNumber:3 },
+    { question: "Ability to organize events as a member or leader.", category: "CoCurricular",pointNumber:4 },
+    { question: "Ability to deliver ideas effectively in a public forum.", category: "CoCurricular",pointNumber:5 },
+    { question: "Ability to compete with others in events.", category: "CoCurricular",pointNumber:6 }
 ];
 
 
 const extraCurricularQuestions = [
-    { question: "Ability to organize events as a leader or volunteer.", category: "ExtraCurricular" },
-    { question: "Ability to expose talent as a group or individual in state-level, national-level, or international-level events.", category: "ExtraCurricular" },
-    { question: "Ability to participate in events which lead way to participate in next higher-level events.", category: "ExtraCurricular" },
-    { question: "Ability to continue and gain expertise in the field of your interest.", category: "ExtraCurricular" }
+    { question: "Ability to organize events as a leader or volunteer.",category: "ExtraCurricular",pointNumber:1 },
+    { question: "Ability to expose talent as a group or individual in state-level, national-level, or international-level events.", category: "ExtraCurricular",pointNumber:2 },
+    { question: "Ability to participate in events which lead way to participate in next higher-level events.", category: "ExtraCurricular",pointNumber:3 },
+    { question: "Ability to continue and gain expertise in the field of your interest.", category: "ExtraCurricular",pointNumber:4 }
 ];
 
 
