@@ -1,5 +1,6 @@
 import express from "express"
 import dotenv from "dotenv"
+import mongoose from "mongoose"
 import connectToMongoDB from "./mongoDB/connect.js"
 import cookieParser from "cookie-parser"
 import authRoutes from "./routers/auth.route.js"
@@ -34,7 +35,19 @@ app.get('/',(req,res)=>{
 
 //connecting mongoDB
 
-app.listen(ServerPORT,() =>{
-    connectToMongoDB();
-    console.log("Server is runing ");
+// app.listen(ServerPORT,() =>{
+//     connectToMongoDB();
+//     console.log("Server is runing ");
+// })
+
+app.listen(process.env.PORT, () =>{
+    try {
+        // console.log(process.env.MONGO_DB_URI)   
+        // mongoose.connect("mongodb://localhost:27017/indirect-survey")
+        connectToMongoDB();
+        console.log("DB connected")
+
+    } catch (error) {
+        console.log(error.message)
+    }
 })
