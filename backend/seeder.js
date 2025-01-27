@@ -297,32 +297,33 @@ const insertQuestions = async () => {
         await connectToMongoDB();
 
         // Insert Parent Questions
-        await ParentQuestion.insertMany(parentQuestions);
-        console.log('Parent questions inserted successfully.');
+        // await ParentQuestion.insertMany(parentQuestions);
+        // console.log('Parent questions inserted successfully.');
 
-        // Insert Employer Questions
-        await EmployerQuestion.insertMany(employerQuestions);
-        console.log('Employer questions inserted successfully.');
+        // // Insert Employer Questions
+        // await EmployerQuestion.insertMany(employerQuestions);
+        // console.log('Employer questions inserted successfully.');
 
-        // Insert Alumni Questions
-        await AlumniQuestion.insertMany(alumniQuestions);
-        console.log('Alumni questions inserted successfully.');
+        // // Insert Alumni Questions
+        // await AlumniQuestion.insertMany(alumniQuestions);
+        // console.log('Alumni questions inserted successfully.');
 
-        // Insert Core Student Questions
-        await StudentQuestion.insertMany(coreQuestions);
-        console.log('Core student questions inserted successfully.');
+        // // Insert Core Student Questions
+        // await StudentQuestion.insertMany(coreQuestions);
+        // console.log('Core student questions inserted successfully.');
 
-        // Insert Co-Curricular Questions
-        await StudentQuestion.insertMany(coCurricularQuestions);
-        console.log('Co-curricular student questions inserted successfully.');
+        // // Insert Co-Curricular Questions
+        // await StudentQuestion.insertMany(coCurricularQuestions);
+        // console.log('Co-curricular student questions inserted successfully.');
 
-        // Insert Extra-Curricular Questions
-        await StudentQuestion.insertMany(extraCurricularQuestions);
-        console.log('Extra-curricular student questions inserted successfully.');
+        // // // Insert Extra-Curricular Questions
+        // await StudentQuestion.insertMany(extraCurricularQuestions);
+        // console.log('Extra-curricular student questions inserted successfully.');
 
-        // Insert Department-Specific Questions
+        // // Insert Department-Specific Questions
         await StudentQuestion.insertMany(departmentSpecificQuestions);
         console.log('Department-specific questions inserted successfully.');
+
     } catch (error) {
         console.error('Error inserting questions:', error.message);
     }
