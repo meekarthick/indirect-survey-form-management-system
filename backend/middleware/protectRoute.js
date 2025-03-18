@@ -10,7 +10,7 @@ const protectRoute = (req,res,next) =>{
 
     try {
         const decodedToken = jwt.verify(token, process.env.JWT_SECRET_KEY)
-
+        
         req.user = decodedToken
 
         next()

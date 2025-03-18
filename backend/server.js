@@ -1,51 +1,54 @@
 import express from "express"
 import dotenv from "dotenv"
-import mongoose from "mongoose"
+import cors from "cors"
+import morgan from "morgan"
 import connectToMongoDB from "./mongoDB/connect.js"
 import cookieParser from "cookie-parser"
 import authRoutes from "./routers/auth.route.js"
-import { fetchQuestions } from "./fetch_and_post/fetchUserQuestions.js"
 import questionRoute from "./routers/question.route.js"
+import session from "express-session"
+import passport from "./utils/passport.config.js"
 dotenv.config()
 
 const app = express()
 
+const ServerPORT = process.env.PORT || 3005
 
-const ServerPORT = process.env.PORT || 7000
-console.log(ServerPORT);
-
+app.use(cors(
+    {
+        origin: "http://localhost:5173",  // ✅ Allow requests from your frontend
+        credentials: true  // ✅ Allow cookies and authentication headers
+    }
+));
 app.use(express.json());
 app.use(cookieParser());
 
+app.use(morgan("dev"))
 
-//middleware for employer signup
+
+// employer signup
 app.use('/api/auth',authRoutes)
 
+// app.post('/api/auth/google',(req,res) =>{
+//     console.log("Hit google route")
+//     return res.status(200).json({message:"Hit backend"})
+// })
 
 
 // api for fecting questions
 app.use('/api/questions',questionRoute)
 
-
-
 app.get('/',(req,res)=>{
     res.send("Hello World")
 })
 
-
-//connecting mongoDB
-
-// app.listen(ServerPORT,() =>{
-//     connectToMongoDB();
-//     console.log("Server is runing ");
-// })
-
-app.listen(process.env.PORT, () =>{
+app.listen(ServerPORT, () =>{
     try {
         // console.log(process.env.MONGO_DB_URI)   
         // mongoose.connect("mongodb://localhost:27017/indirect-survey")
+        console.log(`Server running on PORT ${ServerPORT}`);
+        
         connectToMongoDB();
-        console.log("DB connected")
 
     } catch (error) {
         console.log(error.message)

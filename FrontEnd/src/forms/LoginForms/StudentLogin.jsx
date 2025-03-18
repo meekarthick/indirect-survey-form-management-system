@@ -3,22 +3,38 @@ import { useState } from 'react';
 import bit_logo from '..//../assets/images/bit_logo.png';
 import google from '..//../assets/images/google.png';
 import { useGoogleLogin } from '@react-oauth/google';
+import {useNavigate} from "react-router-dom"
 const StudentLogin = () => {
 
+    const navigate = useNavigate()
 
     const login = useGoogleLogin({
         onSuccess: async (tokenResponse) => {
             const { access_token } = tokenResponse;
             // Fetch user info from Google UserInfo endpoint
             try {
-                const userInfoResponse = await fetch('https://www.googleapis.com/oauth2/v2/userinfo', {
+                const userInfoResponse = await fetch('http://localhost:3005/api/auth/google', { 
+                    method: "POST", 
                     headers: {
-                        Authorization: `Bearer ${access_token}`,
+                        "Content-Type": "application/json"
                     },
+                    credentials: "include",
+                    body: JSON.stringify({ token: access_token })
                 });
+                
+
+                if(!userInfoResponse.ok){
+                    console.log("Invalid Acccess")
+                    alert("Invalid Mail ID")
+                }
+                else{
+                    navigate('/')
+                }
+
                 const userInfo = await userInfoResponse.json();
                 // setEmail(userInfo.email);
-                console.log('User Info:', userInfo);
+
+                console.log('Student Info:', userInfo);
             } catch (error) {
                 console.error('Error fetching user info:', error);
             }
@@ -31,7 +47,7 @@ const StudentLogin = () => {
         <div className='Loginmain-div'>
             <div className='std-form'>
                 <div className='heading'>
-                    <h3>Welcome Back </h3>
+                    <h3>Welcome Back 🙌...</h3>
                 </div>
                 <div className='login-logo'>
                     <img src={bit_logo} alt="Logo" />

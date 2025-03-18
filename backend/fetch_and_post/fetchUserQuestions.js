@@ -1,77 +1,70 @@
-import StudentQuestion from "../model/studentQueSchema.js";
-import AlumniQuestion from "../model/alumniQueSchema.js";
-import ParentQuestion from "../model/parentQueSchema.js";
-import EmployerQuestion from "../model/employerQueSchema.js";
+import Questions from "../model/questionSchema.js"
 
-const mapModels = {
-   studentquestions: { model: StudentQuestion },
-   parentquestions: { model: ParentQuestion },
-   employerquestions: { model: EmployerQuestion },
-   alumniquestions: { model: AlumniQuestion }
-}
+const fetchUserQuestions = async (req,res) => {
+    try {
+        const {role,department} =  req.params
 
-export const fetchQuestions = async (req, res) => {
-   try {
-      const { role, department } = req.params
+        
+        if(role === "Student"  && !department || role === "Alumini" && !department){
+            return res.status(400).json({error : "Department is mandatory"})
+        }
 
-      const roleConfig = mapModels[role]
-
-      //if role is missing or not present
-      if (role === "studentquestions" && (!department || typeof (department) !== 'string' || department.trim() === ' ')) {
-         return res.status(400).json({ error: "Missing department" });
-      }
-
-      let questArray = []
-
-      if (role === "studentquestions") {
-         const studFetchedQuestions = await roleConfig.model.find({
-            $or: [
-               { $and: [{ category: "DepartmentSpecific" }, { department: department }] },
-               { category: "Core" },
-               { category: "ExtraCurricular" },
-               { category: "CoCurricular" }
-            ]
-         })
-
-         if (!studFetchedQuestions.length) {
-            return res.status(404).json({ message: "No Data Found" })
-         }
-
-         questArray = studFetchedQuestions.map(doc => doc.question);
-      }
-      else {
-         //other User Question Fetching
-
-         const fetchedQues = await roleConfig.model.find().sort({ pointNumber: 1 }).select('question')
-
-         if (!fetchedQues.length) {
-            res.status(404).json({ message: "No Data Found" })
-         }
-
-         questArray = fetchedQues.map(doc => doc.question)
-
-         //if department parameter exists  in the URL then fetching dep specific questions for ALUMNI
-
-         if (role === 'alumniquestions' && department) {
-            const fetchDepQuestion = await StudentQuestion.find(
-               {
-                  category: 'DepartmentSpecific',
-                  department: department
-               }
+        if(role === "Student"){
+            
+            const fetchedQuestions = await Questions.find(
+                {
+                    Role : role,
+                   $or : [
+                    {Type : { $in : ["Student Survey","Extra Curricular","CoCurricular"]}},
+                    {Type : "Department specific", Department : department}
+                   ]
+                },
+                {
+                    Content  : 1,
+                    id : 1,
+                    Type : 1,
+                    Department :1
+                }
             )
-            // concating the depquestions to the quest array if available
-            const depquestArray = fetchDepQuestion.map(doc => doc.question)
 
-            if (depquestArray.length) {
-               questArray = [...questArray, ...depquestArray]
-            }
-         }
+            return res.status(200).json({questions : fetchedQuestions})
+            
+        }
 
-      }
-       res.status(200).json({ questions: questArray });
-   }
-   
-   catch (error) {
-      return res.status(500).json({ error: "Internal Server Error" })
-   }
+        else if (role === "Alumini"){
+            const fetchedQuestions = await Questions.find(
+               {
+                $or : [
+                    {Role : role},
+                    {Type : "Department specific", Department : department}
+                ]
+               },
+                {
+                    Content : 1,
+                    id : 1,
+                    Type : 1,
+                    Department:1
+                }
+            )
+
+            return res.status(200).json({questions : fetchedQuestions})
+        }
+        else{
+            const fetchedQuestions = await Questions.find(
+                {Role : role},
+                {Content : 1, _id : 1}
+            )
+
+
+            return res.status(200).json({questions : fetchedQuestions})
+
+        }
+
+    } catch (error) {
+        console.log(error.message)
+    }
 }
+
+export default fetchUserQuestions;
+
+

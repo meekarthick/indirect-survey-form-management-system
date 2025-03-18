@@ -10,7 +10,7 @@ const CoCurricularForm = ({ department }) => {
         setcoCurricular(updateValue)
     }
     const handleCoCurricularsubmit = () => {
-
+        
     }
     const coCurricularTable = [
         { question: "Ability to implement ideas as a team and make it into a workable product." },

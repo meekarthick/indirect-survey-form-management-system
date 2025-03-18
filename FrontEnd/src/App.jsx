@@ -18,6 +18,7 @@ import DashBoard from './components/adminpagecompo/DashBoard';
 import Logs from './components/adminpagecompo/Logs';
 import UserManagement from './components/adminpagecompo/UserManagement';
 import AluminiSignUp from './forms/SignUpForms/AluminiSignUp';
+import Parent from './forms/LoginForms/Parent';
 function App() {
 
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/employerlogin" element={<EmployerLogin />} />
         <Route path="/studentlogin" element={<StudentLogin />} />
         <Route path="/adminlogin" element={<AdminLogin />} />
+        <Route path='/parentslogin' element={<Parent />} />
         <Route path="/alumnisignup" element={<AluminiSignUp />} />
         <Route path="/studentUI" element={<StudentUI />} />
         <Route path="/alumniUI" element={<AlumniUI />} />

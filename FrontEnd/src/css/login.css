@@ -154,7 +154,7 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     justify-content: space-evenly;
     height: 40px;
-    border-radius: 10px;
+    border-radius: 5px;
     border: none;
     border: 1px solid  rgba(0, 0, 0, 0.778);
     color: rgba(0, 0, 0, 0.778);
@@ -173,10 +173,10 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .std-form{
-    width: 20%;
-    box-shadow: 0 0 5px 2px #b5b2b2; 
-    border-radius:10px;
-    padding: 10px 55px;
+    width: 17%;
+    box-shadow: 0 0 5px 2px #edebeb; 
+    border-radius:9px;
+    padding: 10px 50px;
 }
 
 .login-logo{
@@ -198,8 +198,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .login-logo img{
-    height: 120px;
-    width: 120px;
+    height: 180px;
+    width: 200px;
 }
 
 #signup-route-div{
@@ -222,4 +222,110 @@ h1, h2, h3, h4, h5, h6 {
 
 .login-des span{
     color: red
+}
+
+
+ /* parent login styles */
+.parentLogin_head_div{
+    /* background-color: rgb(211, 211, 239); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.parentLogin_div{
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    height: 500px;
+    width: 850px;
+    padding: 5px;
+    box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
+    border-radius: 10px;
+}
+.loginimage_div{
+    width: 50%;
+}
+.loginimage_div img {
+    /* object-fit: cover; */
+    height: 100%;
+    width: 100%;
+}
+
+.parentloginform-div{
+    /* border: 1px solid green; */
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parentloginform{
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.parentLogin_head{
+    font-size: 1.5em;
+    margin: 10px 0px;
+    color: #333;
+}
+
+.parentLogin_head h3{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    
+}
+
+.parentLoginInner_div1  {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.2em;
+    /* border: 1px solid green; */
+    color: #333;
+    padding: 15px;
+}
+
+.parentLoginInner_div1 span{
+    display: block;
+    margin: 5px 0px;
+}
+
+.parentinput{
+    padding: 13px;
+    border: none;
+    border-bottom: 2px solid grey;
+    outline: none;
+    border-radius: 5px;
+    /* margin: 5px 10px; */
+    width: 70%;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+.send-btn {
+    padding: 12px 20px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    color: white;
+    background-color: #0dcc73;
+    margin-left: 8px;
+}
+
+.parentinput:focus{
+    border: 2px solid rgb(82, 83, 85);
+}
+
+.verify-btn {
+    padding: 12px 20px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    color: white;
+    background-color: #0d56cc;
+    margin-left: 8px;
 }

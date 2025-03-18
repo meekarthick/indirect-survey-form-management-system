@@ -34,6 +34,9 @@ const employerSchema = new mongoose.Schema({
     },
     role:{
         type:String,
+        enum : {
+            values : ["Employer"]
+        },
         required:true
     }
 })

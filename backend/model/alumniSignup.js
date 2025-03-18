@@ -21,9 +21,16 @@ const alumniSignupschema = new mongoose.Schema({
         type : email,
         required : true,
         unique : true
+    },
+    Role :{
+        type : String,
+        enum : {
+            values : ["Alumini"]
+        },
+        required : [true,"Role is mandatory"]
     }
 })
 
 const AluminiSignup = mongoose.model("AluminiSignup",alumniSignupschema)
 
-export default AluminiSignup
+export default Alumini
