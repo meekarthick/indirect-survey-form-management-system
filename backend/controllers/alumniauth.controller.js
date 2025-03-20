@@ -1,33 +1,44 @@
-import Alumini from "../model/alumniSignup";
-import generateTokenandSetcookie from "../utils/generateToken";
+import Alumini from "../model/aluminiSchema.js";
+import generateTokenandSetcookie from "../utils/generateToken.js";
 
-export const login = async (req,res) =>{
+export const aluminiLogin = async (req, res) => {
     try {
-        const {userName, rollno} = req.body;
+        const { token } = req.body;
 
-        if(!userName ||  !rollno){
-            return res.status(500).json({error:"All fields are required"})
+        const userResponseInfo = await fetch(`https://www.googleapis.com/oauth2/v2/userinfo`, {
+            headers: { Authorization: `Bearer ${token}` }
+        });
+
+        const userInfo = await userResponseInfo.json();
+
+        if (!userInfo.email) {
+            return res.status(400).json({ message: "Invalid Google Token" });
         }
 
-        const alumini = await Alumini.findOne(rollno);
-        const aluminiPass = await bcrypt.compare(password,alumini.password);
-
-        if(!alumini || !aluminiPass){
-            return res.status(400).json({error : "Invalid Credentials"});
+        if (userInfo.hd !== "bitsathy.ac.in") {
+            return res.status(401).json({ error: "Unauthorized Access" });
         }
 
-        generateTokenandSetcookie(alumini._id,res);
+        const user = await Alumini.findOne({ Email: userInfo.email });
 
-        res.status(200).json({
-            _id : alumini.id,
-            name : alumini.Name,
-            batch : alumini.batch,
-            rollNo : alumini.rollno,
-            dep : alumini.department,
-        })
+        if (!user) {
+            return res.status(401).json({ message: "User not found" });
+        }
+
+        if (user.Role !== "Alumini") {
+            return res.status(403).json({ error: "Access denied! Not an alumini." });
+        }
+
+        generateTokenandSetcookie(user, res);
+
+        return res.status(200).json({
+            id: user._id,
+            name: user.Name,
+            email: user.Email
+        });
 
     } catch (error) {
-        return res.status(500).json({error : "Server error"});
+        console.log("Alumini Login error", error.message);
+        return res.status(500).json({ error: "Internal Server Error" });
     }
-}
-
+};
