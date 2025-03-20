@@ -16,6 +16,7 @@
     "@mui/material": "^5.15.15",
     "@react-email/components": "0.0.23",
     "firebase": "^11.3.1",
+    "iconsax-react": "^0.0.8",
     "jwt-decode": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

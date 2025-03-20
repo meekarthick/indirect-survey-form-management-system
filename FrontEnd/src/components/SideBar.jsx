@@ -1,104 +1,123 @@
-import React, { useState } from "react";
-import "../css/Admin.css"; // Import the CSS file for styling
-import { LuLayoutDashboard } from "react-icons/lu";
-import { IoHomeOutline } from "react-icons/io5";
-import { SiLogstash } from "react-icons/si";
-import { FaRegUser } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
+import "../css/Admin.css";
+import { FaAngleDown, FaAngleUp, FaQuestion, FaRegUser } from "react-icons/fa";
 import { BiLogOut } from "react-icons/bi";
-import { NavLink } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { Home2, KeyboardOpen, LogoutCurve } from "iconsax-react";
+import bitLogo from "../assets/images/bit web logo.png"
 const Sidebar = () => {
-
-  // used useLocation to track the current path to apply the styles
   const location = useLocation();
-
-
-// this usestate is closing and openinng the side bar
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+
+  // Keep sidebar and dropdown open when inside dashboard routes
+  useEffect(() => {
+    if (location.pathname.startsWith("/admin/dashboard")) {
+      setIsDropdownOpen(true);
+    }
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (location.pathname.startsWith("/admin")) {
+      setIsOpen(true);
+    }
+  }, [location.pathname]);
+  // Toggle sidebar visibility manually
   const toggleSidebar = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((prev) => !prev);
+  };
+
+  // Logout function
+  const handleLogout = () => {
+    alert("Logging out...");
+    // Add actual logout logic here
   };
 
   return (
     <div className="sidebar-container">
+      {/* Sidebar Toggle Button */}
+      <button className="toggle-btn" onClick={toggleSidebar}>
+        {isOpen ? "Close" : "Open"}
+      </button>
+
       <div className={`sidebar ${isOpen ? "open" : ""}`}>
         <div className="sidebar-heading">
-          <h3>BIT Admin</h3>
+          <img className="logo" src={bitLogo} />
         </div>
         <div className="sidebar-options">
           <ul>
             <li className="sidebarlistnames">
-              <IoHomeOutline className="adminpage-icons" />
-              <NavLink 
-                to="/" 
-              >
-                Home
-              </NavLink>
+              <div className="icons-cust">
+                <Home2 />
+              </div>
+              <NavLink to="/">Home</NavLink>
             </li>
-            {/* dynamically  styled based on the location  */}
 
-            <li className={location.pathname === '/admin/dashboard' ? 'sidebarlistnames active-link' : 'sidebarlistnames'}>
-              <LuLayoutDashboard className="adminpage-icons" />
-              <NavLink 
-                to="dashboard" 
-              >
-                Dashboard
-              </NavLink>
+            {/* Dashboard Dropdown */}
+            <li
+              className={`sidebarlistnames ${
+                location.pathname.startsWith("/admin/dashboard")
+                  ? "active-link"
+                  : ""
+              }`}
+            >
+              <div className="dashboard-dropdown">
+                <div
+                  className="dropdown-header"
+                  onClick={() => setIsDropdownOpen((prev) => !prev)}
+                >
+                  <div className="dropdown-head">
+                    <div className="dashboard-button">
+                      <div className="icons-cust">
+                        <KeyboardOpen />
+                      </div>
+                      <NavLink to="/admin/dashboard">Dashboard</NavLink>
+                    </div>
+                    <div className="dropdown-icon">
+                      {isDropdownOpen ? <FaAngleUp /> : <FaAngleDown />}
+                    </div>
+                  </div>
+                </div>
+                {isDropdownOpen && (
+                  <div className="dropdown-content">
+                    <Link className="elements-drop" to="studentTable">
+                      Student
+                    </Link>
+                    <Link className="elements-drop" to="aluminiTable">
+                      Alumini
+                    </Link>
+                    <Link className="elements-drop" to="employerTable">
+                      Employer
+                    </Link>
+                    <Link className="elements-drop" to="parentTable">
+                      Parents
+                    </Link>
+                  </div>
+                )}
+              </div>
             </li>
-            {/* <li className={location.pathname === '/StudentUI' ? 'sidebarlistnames active-link' : 'sidebarlistnames'}>
-              <LuLayoutDashboard className="adminpage-icons" />
-              <NavLink 
-                to="studentUI" 
-              >
-                Student Form
-              </NavLink>
-            </li>
-            <li className={location.pathname === '/AlumniUI' ? 'sidebarlistnames active-link' : 'sidebarlistnames'}>
-              <LuLayoutDashboard className="adminpage-icons" />
-              <NavLink 
-                to="alumniUI" 
-              >
-                Alumni Form
-              </NavLink>
-            </li>
-            <li className={location.pathname === '/parentsUI' ? 'sidebarlistnames active-link' : 'sidebarlistnames'}>
-              <LuLayoutDashboard className="adminpage-icons" />
-              <NavLink 
-                to="parentsUI" 
-              >
-                Parent Form
-              </NavLink>
-            </li>
-            <li className={location.pathname === '/employerUI' ? 'sidebarlistnames active-link' : 'sidebarlistnames'}>
-              <LuLayoutDashboard className="adminpage-icons" />
-              <NavLink 
-                to="employerUI" 
-              >
-                Employer Form
-              </NavLink>
-            </li> */}
-            <li className={location.pathname === '/admin/logs' ? 'sidebarlistnames active-link' : 'sidebarlistnames'}>
-              <SiLogstash className="adminpage-icons" />
-              <NavLink 
-                to="logs" 
-              >
-                Logs
-              </NavLink>
-            </li>
-            <li className={location.pathname === '/admin/manageusers' ? 'sidebarlistnames active-link' : 'sidebarlistnames'}>
-              <FaRegUser className="adminpage-icons" />
-              <NavLink 
-                to="manageusers" 
-              >
-                User Management
-              </NavLink>
+
+            {/* User Management */}
+            <li
+              className={`sidebarlistnames ${
+                location.pathname === "/admin/manageusers" ? "active-link" : ""
+              }`}
+            >
+              <div className="icons-cust">
+               <FaQuestion />
+              </div>
+              <NavLink to="/admin/manageusers">Questions</NavLink>
             </li>
           </ul>
         </div>
+
+        {/* Logout */}
         <div className="logout-div">
           <ul>
-            <li><BiLogOut className="adminpage-icons" />Logout</li>
+            <li onClick={handleLogout} className="logout-button">
+             <LogoutCurve className="icons-cust" />
+              Logout
+            </li>
           </ul>
         </div>
       </div>

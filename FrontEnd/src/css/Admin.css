@@ -9,7 +9,7 @@ h5,
 h6 {
     margin: 0;
     padding: 0;
-    font-family: 'https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap';
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     box-sizing: border-box;
 }
 
@@ -26,38 +26,38 @@ h6 {
     margin-left: 200px;
 }
 
-
-/* side bar styles */
+/* Sidebar styles */
 .sidebar {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 180px;
-    background-color: #033b8a;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    background-color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     height: 100vh;
-    padding: 0px 10px;
+    padding: 10px;
     position: fixed;
     top: 0;
     left: 0;
 }
 
-
+.sidebar.open{
+    width: 200px;
+}
 .sidebar-options {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     flex-grow: 1;
 }
 
 .sidebar-options ul {
-    padding: 0px;
+    padding: 0;
     list-style: none;
+    display: flex;
+    flex-direction: column;
 }
 
 .sidebarlistnames {
     padding: 13px 15px;
-    color: white;
+    color: #333;
     border-radius: 10px;
     margin-bottom: 5px;
     display: flex;
@@ -68,54 +68,122 @@ h6 {
 
 .sidebarlistnames a {
     text-decoration: none;
-    color: white;
-    font-size: 14px;
+    color: #808080;
+    font-size: 18px;
+    font-weight:650;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.adminpage-icons {
-    margin-right: 15px;
+.sidebarlistnames a:hover {
+    color: #484848;
 }
 
-.sidebarlistnames:hover {
-    background-color: rgb(208, 84, 84);
+.sidebar-options a .active-link {
+    color: black;
 }
 
-.sidebar-options .active-link {
-    background-color: rgb(237, 67, 67);
-    /* Full list item background when active */
+.logo{
+    width: 190px;
+    margin: 0px;
 }
-
-.sidebar-options li.active-link a {
-    color: white;
-    /* Ensure text inside active link stays white */
-}
-
 .logout-div ul {
-    padding: 0px;
+    padding: 0;
     list-style: none;
+
 }
 
 .logout-div li {
-    border-radius: 10px;
-    padding: 15px 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 15px;
     display: flex;
     align-items: center;
-    color: white;
+    color: gray;
     cursor: pointer;
     font-size: 15px;
-    transition: background-color 1s ease;
+    transition: all 1s ease;
+}
+
+.logout-div li :hover{
+    color: #484848;
 }
 
 .sidebar-heading {
-    padding: 15px 10px;
+    padding: 0px;
     display: flex;
     justify-content: center;
-    color: white;
+    color: gray;
     font-size: 20px;
     font-weight: bolder;
 }
 
+/* Dashboard Dropdown */
+.dashboard-dropdown {
+    width: 100%;
+    position: relative;
+}
+.dashboard-button{
+    display: flex;
+    justify-content: space-between;  
+}
+.dropdown-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    color: gray;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
 
+.dropdown-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.dropdown-elements {
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    display: none;
+    background-color: gray;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.elements-drop{
+   border: solid 2px white;
+   width: 30%;
+    padding: 5px 50px;
+}
+
+.icons-cust{
+    margin-right: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+.dropdown-menu li {
+    padding: 10px;
+    text-align: center;
+    color: #333;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+}
+.dropdown-head{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Dropdown Active State */
+.dropdown-open .dropdown-elements {
+    display: block;
+    max-height: 200px;
+}
 /* Design of dashboard page */
 
 .dashboardhead-div {

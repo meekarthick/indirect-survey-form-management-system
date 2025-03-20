@@ -14,8 +14,6 @@ const DashBoard = () => {
       </div>
       <DashBoardForm />
       <DashboardTable />
-      <ParentsFeedbacks />
-      <EmployerFeedBAck />
     </div>
   )
 }

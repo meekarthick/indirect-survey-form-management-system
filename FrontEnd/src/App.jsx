@@ -3,6 +3,7 @@ import './css/index.css'
 import './css/signup.css'
 import './css/login.css'
 import './css/home.css'
+import './css/Tables.css'
 import EmployerLogin from './forms/LoginForms/EmployerLogin';
 import EmployerSignUp from './forms/SignUpForms/EmployerSignUp';
 import StudentLogin from './forms/LoginForms/StudentLogin';
@@ -18,13 +19,20 @@ import DashBoard from './components/adminpagecompo/DashBoard';
 import Logs from './components/adminpagecompo/Logs';
 import UserManagement from './components/adminpagecompo/UserManagement';
 import AluminiSignUp from './forms/SignUpForms/AluminiSignUp';
-import Parent from './forms/LoginForms/Parent';
+import Parent from './forms/LoginForms/PhoneAuth';
+import loginform from './pages/loginform';
+import Loginform from './pages/loginform';
+import StudentTable from './components/dashboardcomp/StudentTable';
+import AluminiTable from './components/dashboardcomp/AluminiTable';
+import EmployerTable from './components/dashboardcomp/EmployerTable';
+import ParentsTabel from './components/dashboardcomp/ParentsTabel';
 function App() {
 
   return (
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/loginform" element = {<Loginform />} />
         <Route path="/employersignup" element={<EmployerSignUp />} />
         <Route path="/employerlogin" element={<EmployerLogin />} />
         <Route path="/studentlogin" element={<StudentLogin />} />
@@ -45,6 +53,10 @@ function App() {
           <Route path="alumniUI" element={<AlumniUI />} />
           <Route path="employerUI" element={<EmployerUI />} />
           <Route path="parentsUI" element={<ParentUI />} />
+          <Route path='studentTable' element={<StudentTable/>}/>
+          <Route path='aluminiTable' element={<AluminiTable/>} />
+          <Route path='employerTable' element={<EmployerTable/>} />
+          <Route path='parentTable' element={<ParentsTabel/>} />
         </Route>
 
       </Routes>
