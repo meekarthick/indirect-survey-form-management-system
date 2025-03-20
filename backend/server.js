@@ -6,8 +6,7 @@ import connectToMongoDB from "./mongoDB/connect.js"
 import cookieParser from "cookie-parser"
 import authRoutes from "./routers/auth.route.js"
 import questionRoute from "./routers/question.route.js"
-import session from "express-session"
-import passport from "./utils/passport.config.js"
+import responseRoute from './routers/resposnse.route.js'
 dotenv.config()
 
 const app = express()
@@ -26,14 +25,12 @@ app.use(cookieParser());
 app.use(morgan("dev"))
 
 
-// employer signup
 app.use('/api/auth',authRoutes)
 
-// app.post('/api/auth/google',(req,res) =>{
-//     console.log("Hit google route")
-//     return res.status(200).json({message:"Hit backend"})
-// })
+app.use('/api/response',questionRoute)
 
+//get response query 
+app.use('/api/getresponses',responseRoute)
 
 // api for fecting questions
 app.use('/api/questions',questionRoute)
@@ -44,8 +41,7 @@ app.get('/',(req,res)=>{
 
 app.listen(ServerPORT, () =>{
     try {
-        // console.log(process.env.MONGO_DB_URI)   
-        // mongoose.connect("mongodb://localhost:27017/indirect-survey")
+
         console.log(`Server running on PORT ${ServerPORT}`);
         
         connectToMongoDB();

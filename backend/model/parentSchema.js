@@ -9,10 +9,6 @@ const ParentSchema = new mongoose.Schema({
         type : Number,
         required : [true,"Mobile Number is Mandatory"]
     },
-    Email : {
-        type : String,
-        required : [true,"Email is Mandatory"]
-    },
     Batch : {
         type : Number,
         required : [true,"Batch is Mandatory"]
@@ -24,6 +20,6 @@ const ParentSchema = new mongoose.Schema({
     }
 })
 
-const Parents = mongoose.model("Parents",ParentSchema);
+const Parent = mongoose.model("Parents",ParentSchema);
 
-export default Parents;
+export default Parent;

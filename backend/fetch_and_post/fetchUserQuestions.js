@@ -4,6 +4,7 @@ const fetchUserQuestions = async (req,res) => {
     try {
         const {role,department} =  req.params
 
+        console.log(role)
         
         if(role === "Student"  && !department || role === "Alumini" && !department){
             return res.status(400).json({error : "Department is mandatory"})
@@ -23,9 +24,11 @@ const fetchUserQuestions = async (req,res) => {
                     Content  : 1,
                     id : 1,
                     Type : 1,
-                    Department :1
+                    Department :1,
+                    Category : 1
                 }
             )
+
 
             return res.status(200).json({questions : fetchedQuestions})
             
@@ -43,7 +46,9 @@ const fetchUserQuestions = async (req,res) => {
                     Content : 1,
                     id : 1,
                     Type : 1,
-                    Department:1
+                    Department:1,
+                    Category : 1,
+                    Type : 1
                 }
             )
 
@@ -52,9 +57,8 @@ const fetchUserQuestions = async (req,res) => {
         else{
             const fetchedQuestions = await Questions.find(
                 {Role : role},
-                {Content : 1, _id : 1}
+                {Content : 1, _id : 1,Category:1, Type:1}
             )
-
 
             return res.status(200).json({questions : fetchedQuestions})
 
