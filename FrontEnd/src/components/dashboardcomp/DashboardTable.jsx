@@ -15,14 +15,8 @@ const DashboardTable = ({ role }) => {
     "Life-long Learning",
   ];
 
-  const hiddenColums = {
-    Student: ["Alumni Survey", "Employer Survey", "Parent Survey"],
-    Parent: ["Student Survey", "Alumni Survey", "Employer Survey"],
-    Alumni: ["Student Survey", "Employer Survey", "Parent Survey"],
-    Employer: ["Student Survey", "Alumni Survey", "Parent Survey"],
-  };
-
-  const columns = [
+  // Column headings for the main dashboard
+  const mainDashboardColumns = [
     "S.no",
     "Program Outcomes",
     "Student Survey",
@@ -33,36 +27,53 @@ const DashboardTable = ({ role }) => {
     "CoCurricular Survey",
     "Average Rating",
   ];
+
+  // Column headings for role-specific dashboards (Student, Parent, Alumni, Employer)
+  const responseColumns = [
+    "S.no",
+    "Program Outcomes",
+    "Strongly Agree",
+    "Agree",
+    "Neutral",
+    "Disagree",
+    "Strongly Disagree",
+  ];
+
+  // Determine which columns to display based on role
+  const columnsToDisplay = role === "Normal" ? mainDashboardColumns : responseColumns;
+
+  // Function to generate a random number between 1 and 5
+  const getRandomNumber = () => Math.floor(Math.random() * 5) + 1;
+
   return (
     <div className="table-container">
       <table className="survey-table">
         <thead className="table-head">
           <tr>
-            {columns.map((col, index) =>
-              !hiddenColums[role]?.includes(col) ? (
-                <th key={index}>{col}</th>
-              ) : null
-            )}
+            {columnsToDisplay.map((col, index) => (
+              <th key={index}>{col}</th>
+            ))}
           </tr>
         </thead>
         <tbody>
-          {data.map((items, index) => (
-            <tr key={index} className={index % 2 === 0 ? "even-row" : "odd-row"}>
-              <td>{index + 1}</td>
-              <td>{items}</td>
-              {!hiddenColums[role]?.includes("Student Survey") && <td>-</td>}
-              {!hiddenColums[role]?.includes("Alumni Survey") && <td>-</td>}
-              {!hiddenColums[role]?.includes("Employer Survey") && <td>-</td>}
-              {!hiddenColums[role]?.includes("Parent Survey") && <td>-</td>}
-              {!hiddenColums[role]?.includes("Extra Curricular Survey") && (
-                <td>-</td>
-              )}
-              {!hiddenColums[role]?.includes("CoCurricular Survey") && (
-                <td>-</td>
-              )}
-              {!hiddenColums[role]?.includes("Average Rating") && <td>-</td>}
-            </tr>
-          ))}
+          {data.map((item, index) => {
+            // Generate random numbers for rating columns
+            const ratings = columnsToDisplay.slice(2, -1).map(() => getRandomNumber());
+
+            // Calculate average rating
+            const averageRating = (ratings.reduce((sum, num) => sum + num, 0) / ratings.length).toFixed(2);
+
+            return (
+              <tr key={index} className={index % 2 === 0 ? "even-row" : "odd-row"}>
+                <td>{index + 1}</td>
+                <td>{item}</td>
+                {ratings.map((num, i) => (
+                  <td key={i}>{num}</td>
+                ))}
+                <td>{averageRating}</td> {/* Display calculated average */}
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>

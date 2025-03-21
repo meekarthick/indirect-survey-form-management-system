@@ -13,7 +13,7 @@ const DashBoard = () => {
         <h3>Survey <span>Dashboard</span> and <span>Reports</span></h3>
       </div>
       <DashBoardForm />
-      <DashboardTable />
+      <DashboardTable role="Normal" />
     </div>
   )
 }
