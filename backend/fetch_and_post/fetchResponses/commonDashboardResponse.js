@@ -60,9 +60,9 @@
 //             result[surveyType] = {};
 //             Object.keys(surveyData[surveyType]).forEach(category => {
 //                 let { sum, count } = surveyData[surveyType][category];
-        
+
 //                 let avg = count > 0 ? (sum / count) : 0; // Ensure avg is a number
-        
+
 //                 // Correct scaling logic
 //                 let scaleRating;
 //                 if (avg <= 2.95) {
@@ -72,7 +72,7 @@
 //                 } else {
 //                     scaleRating = 3;
 //                 }
-        
+
 //                 result[surveyType][category] = scaleRating;
 //             });
 //         });
@@ -103,7 +103,7 @@ mongoose.model("Parent", Parent.schema);
 const commonDashBoardResponse = async (req, res) => {
     try {
         let { responseType, batch, department } = req.query;
-        let matchQuery = {}; 
+        let matchQuery = {};
 
         // **Apply Filtering Based on Admin Selection**
         if (responseType === "Batch") {
@@ -115,12 +115,12 @@ const commonDashBoardResponse = async (req, res) => {
 
         const responses = await Responses.find(matchQuery)
             .populate({
-                path: "User",
+                path: "student_id",
                 select: "batch department"
             })
             .populate({
-                path: "Question",
-                select: "Type Category"
+                path: "question_id",
+                select: "Type Category Content"
             });
 
         console.log("Total Responses Fetched:", responses.length);
@@ -135,9 +135,10 @@ const commonDashBoardResponse = async (req, res) => {
 
         // **Process and Aggregate Responses**
         responses.forEach(response => {
-            const Type = response.Question?.Type || "Unknown";
-            const Category = response.Question?.Category || "Undefined";
-            const answer = Number(response.Answer) || 0;
+            const Type = response.question_id?.Type || "Unknown";  // ✅ Correct field name
+            const Category = response.question_id?.Category || "Undefined";  // ✅ Correct field name
+            const answer = Number(response.response) || 0;  // ✅ Correct field name
+
 
             if (!surveyData[Type]) {
                 surveyData[Type] = {};
@@ -158,9 +159,9 @@ const commonDashBoardResponse = async (req, res) => {
             result[surveyType] = {};
             Object.keys(surveyData[surveyType]).forEach(category => {
                 let { sum, count } = surveyData[surveyType][category];
-        
+
                 let avg = count > 0 ? (sum / count) : 0; // Ensure avg is a number
-        
+
                 // Correct scaling logic
                 let scaleRating;
                 if (avg <= 2.95) {
@@ -170,7 +171,7 @@ const commonDashBoardResponse = async (req, res) => {
                 } else {
                     scaleRating = 3;
                 }
-        
+
                 result[surveyType][category] = scaleRating;
             });
         });

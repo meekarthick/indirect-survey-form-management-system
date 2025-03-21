@@ -10,8 +10,8 @@ async function migrateUserField() {
 
         // ✅ Update all responses in one query
         const result = await Responses.updateMany(
-            { Question: { $type: "string" } },  // Find documents where `User` is a string
-            [{ $set: { Question: { $toObjectId: "$User" } } }] // Convert to ObjectId
+            { User: { $type: "string" } },  // Find documents where `User` is a string
+            [{ $set: { User: { $toObjectId: "$User" } } }] // Convert to ObjectId
         );
 
         console.log(`Updated ${result.modifiedCount} responses.`);
