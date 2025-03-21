@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import ButtonAdmin from "./ButtonAdmin";
 
-const AddQuestionPage = () => {
+const AddQuestionPage = ({ onSubmit, editingIndex, questions }) => {
+  const initialValues = {
+    roleSelect: "",
+    typeSelect: "",
+    categorySelect: "",
+    departmentSpecificSelect: "",
+    question: "",
+  };
 
-
+  useEffect(() => {
+    if (editingIndex !== null) {
+      setValues(questions[editingIndex]);
+    }
+  }, [editingIndex, questions]);
 
   const role = ["Student", "Parent", "Alumini", "Employer"];
   const type = [
@@ -34,17 +45,11 @@ const AddQuestionPage = () => {
   return (
     <div className="main-addQuestion-container">
       <h1>
-        Add the <span>Question</span>
+        {editingIndex !== null ? "Update the" : "Add the"} <span>Question</span>
       </h1>
       <div className="form-container">
         <Formik
-          initialValues={{
-            roleSelect: "",
-            typeSelect: "",
-            categorySelect: "",
-            departmentSpecificSelect: "",
-            question: "",
-          }}
+          initialValues={initialValues}
           validationSchema={Yup.object({
             roleSelect: Yup.string().required("Role is mandatory"),
             typeSelect: Yup.string().required("Type is mandatory"),
@@ -52,12 +57,13 @@ const AddQuestionPage = () => {
             departmentSpecificSelect: Yup.string().required("Select Yes or No"),
             question: Yup.string().required("Question is mandatory"),
           })}
-          onSubmit={(values, { setSubmitting }) => {
-            console.log("Form Data:", values);
+          onSubmit={(values, { setSubmitting, resetForm }) => {
+            onSubmit(values);
+            resetForm();
             setSubmitting(false);
           }}
         >
-          {({ isSubmitting }) => (
+          {({ isSubmitting, setValues }) => (
             <Form>
               {/* Role Dropdown */}
               <div className="main-form-add">
@@ -140,7 +146,7 @@ const AddQuestionPage = () => {
               </div>
 
               {/* Submit Button */}
-              <ButtonAdmin value={"Add the Question"} disables={isSubmitting} />
+              <ButtonAdmin value={editingIndex !== null ? "Update Question" : "Add the Question"} disables={isSubmitting} />
             </Form>
           )}
         </Formik>
