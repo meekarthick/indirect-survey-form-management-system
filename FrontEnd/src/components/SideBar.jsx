@@ -106,7 +106,7 @@ const Sidebar = () => {
               <div className="icons-cust">
                <FaQuestion />
               </div>
-              <NavLink to="/admin/manageusers">Questions</NavLink>
+              <NavLink to="/admin/questionPage">Questions</NavLink>
             </li>
           </ul>
         </div>

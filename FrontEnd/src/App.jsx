@@ -4,6 +4,7 @@ import './css/signup.css'
 import './css/login.css'
 import './css/home.css'
 import './css/Tables.css'
+import'./css/Questions.css'
 import EmployerLogin from './forms/LoginForms/EmployerLogin';
 import EmployerSignUp from './forms/SignUpForms/EmployerSignUp';
 import StudentLogin from './forms/LoginForms/StudentLogin';
@@ -17,7 +18,7 @@ import ParentUI from './UIs/ParentUI';
 import AdminUI from './UIs/AdminUI';
 import DashBoard from './components/adminpagecompo/DashBoard';
 import Logs from './components/adminpagecompo/Logs';
-import UserManagement from './components/adminpagecompo/UserManagement';
+import UserManagement from './components/adminpagecompo/Questions';
 import AluminiSignUp from './forms/SignUpForms/AluminiSignUp';
 import Parent from './forms/LoginForms/PhoneAuth';
 import loginform from './pages/loginform';
@@ -26,6 +27,9 @@ import StudentTable from './components/dashboardcomp/StudentTable';
 import AluminiTable from './components/dashboardcomp/AluminiTable';
 import EmployerTable from './components/dashboardcomp/EmployerTable';
 import ParentsTabel from './components/dashboardcomp/ParentsTabel';
+import Questions from './components/adminpagecompo/Questions';
+import AddQuestionPage from './components/adminpagecompo/AddQuestionPage';
+import UpdateQuestion from './components/adminpagecompo/UpdateQuestion';
 function App() {
 
   return (
@@ -48,7 +52,7 @@ function App() {
         <Route path="/admin" element={<AdminUI />}>
           <Route path="dashboard" element={<DashBoard />} />
           <Route path="logs" element={<Logs />} />
-          <Route path="manageusers" element={<UserManagement />} />
+          <Route path="questionPage" element={<Questions />} />
           <Route path="studentUI" element={<StudentUI />} />
           <Route path="alumniUI" element={<AlumniUI />} />
           <Route path="employerUI" element={<EmployerUI />} />
@@ -57,6 +61,8 @@ function App() {
           <Route path='aluminiTable' element={<AluminiTable/>} />
           <Route path='employerTable' element={<EmployerTable/>} />
           <Route path='parentTable' element={<ParentsTabel/>} />
+          <Route path='addQuestion' element={<AddQuestionPage />} />
+          <Route path='updateQuestion' element={<UpdateQuestion/>} />
         </Route>
 
       </Routes>

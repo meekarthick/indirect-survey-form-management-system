@@ -19,21 +19,6 @@ const DashBoard = () => {
       </div>
       <DashBoardForm />
       <DashboardTable />
-      <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "20px" }}>
-        <div style={{ width: "48%" }}>
-          <GroupedBarChart />
-        </div>
-        <div style={{ width: "48%" }}>
-          <LineChartComponent />
-        </div>
-        <div style={{ width: "48%" }}>
-          <PieChartComponent />
-        </div>
-        <div style={{ width: "48%" }}>
-          <RadarChartComponent />
-        </div>
-      </div>
-
     </div>
   )
 }
